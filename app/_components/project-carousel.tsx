@@ -120,13 +120,13 @@ export const ProjectCarousel = () => {
 				<div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
 					<ChevronRight size={30} onClick={nextSlide} />
 				</div>
-				<div className="flex top-4 justify-center mt-20">
+				<div className="flex justify-center mt-20 w-full flex-wrap">
 					{PROJECTS.map((_, slideIndex) => (
 						<div
 							key={slideIndex}
 							onClick={() => goToSlide(slideIndex)}
 							className={cn(
-								'text-2xl cursor-pointer',
+								'text-2xl cursor-pointer mb-2',
 								slideIndex === currentIndex && 'text-green-500',
 							)}
 						>

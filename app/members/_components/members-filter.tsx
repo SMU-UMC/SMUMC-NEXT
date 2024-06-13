@@ -25,17 +25,23 @@ export const MembersFilter = () => {
 			<h1 className="text-green-400 animate-blink font-bold text-5xl mb-10 mt-[100px]">
 				역대 UMC 멤버
 			</h1>
-			<div className="flex items-center justify-center gap-20">
+			<div className="py-10 md:py-0 flex items-center justify-center gap-20">
 				<Button
 					variant="link"
-					className={cn('text-2xl', !all && 'text-green-500 underline')}
+					className={cn(
+						'text-xl md:text-2xl',
+						!all && 'text-green-500 underline',
+					)}
 					onClick={() => setFilter(false)}
 				>
 					Active Member
 				</Button>
 				<Button
 					variant="link"
-					className={cn('text-2xl', all && 'text-green-500 underline')}
+					className={cn(
+						'text-xl md:text-2xl',
+						all && 'text-green-500 underline',
+					)}
 					onClick={() => setFilter(true)}
 				>
 					Member List

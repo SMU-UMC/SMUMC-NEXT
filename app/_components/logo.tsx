@@ -14,7 +14,7 @@ const Logo = () => {
 	const router = useRouter();
 	return (
 		<div
-			className="hidden md:flex items-center gap-x-2 cursor-pointer"
+			className="flex items-center gap-x-2 cursor-pointer"
 			onClick={() => router.push('/')}
 		>
 			<Image
@@ -22,16 +22,18 @@ const Logo = () => {
 				height="40"
 				width="40"
 				alt="Logo"
-				className="dark:hidden"
+				className="dark:hidden object-contain"
 			/>
 			<Image
 				src="/images/main-logo.webp"
 				height="40"
 				width="40"
 				alt="Logo"
-				className="hidden dark:block"
+				className="hidden dark:block object-contain"
 			/>
-			<p className={cn('font-semibold', font.className)}>SMUMC</p>
+			<p className={cn('hidden md:block font-semibold', font.className)}>
+				SMUMC
+			</p>
 		</div>
 	);
 };

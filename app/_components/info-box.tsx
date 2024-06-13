@@ -48,7 +48,7 @@ export const InfoBox = () => {
 				height="100"
 				width="100"
 				alt="Logo"
-				className="absolute left-[-20px] top-[100px]"
+				className="absolute left-[-20px] top-[60px]"
 			/>
 			<Image
 				src="/images/code.webp"
@@ -65,7 +65,7 @@ export const InfoBox = () => {
 					animate="visible"
 					exit="exit"
 					variants={listVariants}
-					className="w-full flex gap-5 justify-center items-center"
+					className="w-full flex flex-wrap gap-2 justify-center items-center"
 				>
 					{[
 						'스터디',
@@ -78,11 +78,9 @@ export const InfoBox = () => {
 							key={idx}
 							variants={itemVariants}
 							transition={{ type: 'spring' }}
-							className="w-90 bg-[#293C30] px-4 py-1 rounded-2xl flex-wrap"
+							className="w-[90px] sm:w-[140px] bg-[#293C30] px-4 py-1 rounded-2xl"
 						>
-							<h3 className="text-[#12F76C] text-[0.6rem] md:text-sm">
-								{text}
-							</h3>
+							<h3 className="text-[#12F76C] text-[9px] md:text-sm">{text}</h3>
 						</motion.li>
 					))}
 				</motion.ul>
