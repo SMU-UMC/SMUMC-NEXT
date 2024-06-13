@@ -2,6 +2,7 @@ import { Hero } from './_components/hero';
 import { InfoBox } from './_components/info-box';
 import { PartInfo } from './_components/part-info';
 import { ProjectCarousel } from './_components/project-carousel';
+import { RecentIssue } from './_components/recent-issue';
 
 const HomePage = () => {
 	return (
@@ -11,6 +12,7 @@ const HomePage = () => {
 				<InfoBox />
 				<PartInfo />
 				<ProjectCarousel />
+				<RecentIssue />
 			</div>
 		</div>
 	);
