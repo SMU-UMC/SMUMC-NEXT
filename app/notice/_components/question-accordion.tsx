@@ -8,18 +8,18 @@ import { QNA } from '@/constants/info';
 
 export const QuestionAccordion = () => {
 	return (
-		<div className='flex flex-col items-center justify-center w-[80%]'>
-			<h1 className='text-green-700 animate-blink font-bold text-5xl mb-10 mt-[100px]'>
+		<div className="flex flex-col items-center justify-center w-[80%]">
+			<h1 className="text-green-700 animate-blink font-bold text-5xl mb-10 mt-[100px]">
 				자주 묻는 질문
 			</h1>
-			<div className='w-full flex flex-col gap-10'>
+			<div className="w-full flex flex-col gap-10">
 				{QNA.map((q, idx) => (
-					<Accordion type='single' collapsible>
+					<Accordion key={idx} type="single" collapsible>
 						<AccordionItem value={idx.toString()}>
-							<AccordionTrigger className='text-left font-bold text-lg'>
+							<AccordionTrigger className="text-left font-bold text-lg">
 								{q.question}
 							</AccordionTrigger>
-							<AccordionContent className='text-left text-sm'>
+							<AccordionContent className="text-left text-sm">
 								{q.answer}
 							</AccordionContent>
 						</AccordionItem>
