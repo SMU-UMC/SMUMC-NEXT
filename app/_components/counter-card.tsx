@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface CountUpCardProps {
 	title: string;
@@ -13,7 +13,7 @@ interface CountUpCardProps {
 const counter = (
 	setCount: React.Dispatch<React.SetStateAction<number>>,
 	start: number,
-	end: number
+	end: number,
 ) => {
 	let now = start;
 	const handle = setInterval(() => {
@@ -40,15 +40,15 @@ export const CounterCard = ({
 	}, [startNum, endNum]);
 
 	return (
-		<div className='flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-[220px] h-[200px] p-4'>
-			<h3 className='font-bold text-xl text-gray-800'>{title}</h3>
-			<div className='flex items-center'>
+		<div className="flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-[220px] h-[200px] p-4">
+			<h3 className="font-bold text-xl text-gray-800">{title}</h3>
+			<div className="flex items-center">
 				{firstUnit && (
-					<span className='font-bold text-6xl text-gray-800'>{firstUnit}</span>
+					<span className="font-bold text-6xl text-gray-800">{firstUnit}</span>
 				)}
-				<span className='font-bold text-6xl text-gray-700'>{count}</span>
+				<span className="font-bold text-6xl text-gray-700">{count}</span>
 				{lastUnit && (
-					<span className='font-bold text-6xl text-gray-700'>{lastUnit}</span>
+					<span className="font-bold text-6xl text-gray-700">{lastUnit}</span>
 				)}
 			</div>
 		</div>
