@@ -43,9 +43,13 @@ export const CounterCard = ({
 		<div className='flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-[220px] h-[200px] p-4'>
 			<h3 className='font-bold text-xl text-gray-800'>{title}</h3>
 			<div className='flex items-center'>
-				{firstUnit && <span className='font-bold text-6xl'>{firstUnit}</span>}
-				<span className='font-bold text-6xl'>{count}</span>
-				{lastUnit && <span className='font-bold text-6xl'>{lastUnit}</span>}
+				{firstUnit && (
+					<span className='font-bold text-6xl text-gray-800'>{firstUnit}</span>
+				)}
+				<span className='font-bold text-6xl text-gray-700'>{count}</span>
+				{lastUnit && (
+					<span className='font-bold text-6xl text-gray-700'>{lastUnit}</span>
+				)}
 			</div>
 		</div>
 	);

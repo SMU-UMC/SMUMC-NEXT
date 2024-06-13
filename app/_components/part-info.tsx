@@ -54,7 +54,7 @@ export const PartInfo = () => {
 					))}
 				</ul>
 				<div className='bg-[#E3E1E2] h-[200px] rounded-2xl flex items-center justify-center px-10'>
-					<p className='text-xl font-bold'>{currentData || ''}</p>
+					<p className='text-xl font-bold text-gray-700'>{currentData || ''}</p>
 				</div>
 			</div>
 		</div>
