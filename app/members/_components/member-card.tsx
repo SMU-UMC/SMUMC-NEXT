@@ -1,7 +1,7 @@
-import { Member } from '@/types/domain';
-import { BiSolidCrown } from 'react-icons/bi';
+import { Member } from "@/types/domain";
+import { BiSolidCrown } from "react-icons/bi";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 interface MemberCardProps {
   member: Member;
@@ -12,13 +12,13 @@ export const MemberCard = ({ member }: MemberCardProps) => {
     <div className="flex flex-col items-center w-[200px] h-[300px] p-3 bg-[#E3E1E2] relative gap-10 rounded-2xl">
       <div className="flex flex-col items-center justify-center mt-10 relative">
         <Image
-          src={member.sex === 'w' ? '/images/woman.png' : '/images/man.png'}
+          src={member.sex === "w" ? "/images/woman.png" : "/images/man.png"}
           alt={member.name}
           width={105}
           height={105}
           className="object-cover border-white border rounded-full"
         />
-        {member.position !== '챌린저' && (
+        {member.position !== "챌린저" && (
           <BiSolidCrown color="#E6A912" className="absolute top-[-16px] " />
         )}
       </div>
