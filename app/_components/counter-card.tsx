@@ -26,13 +26,13 @@ const counter = (
 	}, 300);
 };
 
-export const CounterCard: React.FC<CountUpCardProps> = ({
+export const CounterCard = ({
 	title,
 	endNum,
 	startNum = 0,
 	firstUnit,
 	lastUnit,
-}) => {
+}: CountUpCardProps) => {
 	const [count, setCount] = useState(startNum);
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ export const CounterCard: React.FC<CountUpCardProps> = ({
 	}, [startNum, endNum]);
 
 	return (
-		<div className='flex flex-col items-center bg-gray-100 rounded-2xl w-72 h-56 gap-2 p-4'>
+		<div className='flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-[220px] h-[200px] p-4'>
 			<h3 className='font-bold text-xl text-gray-800'>{title}</h3>
 			<div className='flex items-center'>
 				{firstUnit && <span className='font-bold text-6xl'>{firstUnit}</span>}

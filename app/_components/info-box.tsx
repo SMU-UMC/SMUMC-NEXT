@@ -3,14 +3,14 @@ import { CounterCard } from './counter-card';
 
 export const InfoBox = () => {
 	return (
-		<div className='relative flex flex-col items-center max-w-3xl space-y-4 mt-[180px] bg-zinc-800 w-full rounded-md h-[300px]'>
+		<div className='relative flex flex-col items-center max-w-4xl space-y-4 bg-[#E3E1E2] dark:bg-zinc-800 w-full rounded-2xl h-full py-10 mt-[200px]'>
 			<h1 className='font-bold text-[#7C7C7C] text-[3rem] m-5'>SMUMC</h1>
 			<Image
 				src='/images/smile.webp'
 				height='100'
 				width='100'
 				alt='Logo'
-				className='absolute left-[-20px] top-[200px]'
+				className='absolute left-[-20px] top-[100px]'
 			/>
 			<Image
 				src='/images/code.webp'
@@ -49,7 +49,11 @@ export const InfoBox = () => {
 					);
 				})}
 			</div>
-			<CounterCard title='hi' endNum={10} startNum={30} firstUnit='10' />
+			<div className='flex gap-5 flex-col md:flex-row py-10'>
+				<CounterCard title='역대 SMUMC 멤버수' endNum={186} lastUnit='명' />
+				<CounterCard title='현재 회원 수' endNum={41} lastUnit='명' />
+				<CounterCard title='현재 기수' endNum={6} lastUnit='기' />
+			</div>
 		</div>
 	);
 };
