@@ -11,4 +11,17 @@ type Projects = {
 	release: string | null;
 };
 
-export type { Projects };
+type Member = {
+	id: number;
+	year: number;
+	nickname: string;
+	name: string;
+	part: string;
+	position: string;
+	github: string | null;
+	sex: string;
+	project: string | null;
+	skill: string[];
+};
+
+export type { Projects, Member };

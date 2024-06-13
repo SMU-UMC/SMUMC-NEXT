@@ -1,4 +1,4 @@
-import { FilterProjects } from './_components/FilterProjects';
+import { FilterProjects } from './_components/filter-projects';
 
 const ProjectPage = () => {
 	return (

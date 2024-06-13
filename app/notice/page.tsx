@@ -1,4 +1,4 @@
-import { QuestionAccordion } from './_components/QuestionAccordion';
+import { QuestionAccordion } from './_components/question-accordion';
 
 const NoticePage = () => {
 	return (

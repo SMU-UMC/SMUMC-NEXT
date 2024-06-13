@@ -2,9 +2,9 @@
 
 import { PROJECTS, PROJECTS_YEAR } from '@/constants/projects';
 import { cn } from '@/lib/utils';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
-import { ProjectCard } from './ProjectCard';
+import { ProjectCard } from './project-card';
 
 export const FilterProjects = () => {
 	const router = useRouter();

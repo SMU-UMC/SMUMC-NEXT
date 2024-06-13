@@ -1,5 +1,4 @@
-import React from 'react';
-import { MembersFilter } from './_components/MembersFilter';
+import { MembersFilter } from './_components/members-filter';
 
 const MembersPage = () => {
 	return (
