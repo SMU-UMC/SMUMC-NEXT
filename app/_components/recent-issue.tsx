@@ -3,6 +3,7 @@
 import { NEWS_INFOS } from '@/constants/info';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface NewsInfo {
 	id: string;
@@ -26,7 +27,15 @@ export const RecentIssue: React.FC = () => {
 			</h3>
 			<div className='flex flex-col md:flex-row items-center justify-center gap-20'>
 				{NEWS_INFOS.map((info, idx) => (
-					<div
+					<motion.div
+						initial={{ opacity: 0, y: 100 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: false }}
+						transition={{
+							ease: 'easeInOut',
+							duration: 2,
+							y: { duration: 1 },
+						}}
 						key={info.id}
 						className='relative flex flex-col items-center overflow-hidden w-[330px] h-[460px] rounded-[20px] border-2 border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-100'
 						onMouseEnter={() => setHoveredIndex(idx)}
@@ -40,7 +49,9 @@ export const RecentIssue: React.FC = () => {
 							)}
 						/>
 						<div className='flex flex-col items-center justify-center p-5 h-[36%] bg-white'>
-							<h3 className='font-bold text-[20px] mb-3'>{info.title}</h3>
+							<h3 className='font-bold text-[20px] mb-3 text-black'>
+								{info.title}
+							</h3>
 							<div className='w-[90%] text-center text-[13px] mb-2 text-black '>
 								{info.description}
 							</div>
@@ -48,7 +59,7 @@ export const RecentIssue: React.FC = () => {
 								{info.date}
 							</p>
 						</div>
-					</div>
+					</motion.div>
 				))}
 			</div>
 		</div>

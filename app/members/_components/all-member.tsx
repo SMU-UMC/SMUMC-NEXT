@@ -19,11 +19,11 @@ export const AllMember = () => {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const yearParam = searchParams.get('year');
-	const year = parseInt(yearParam || '6', 10); // Default to year 6 if year is not provided
+	const year = parseInt(yearParam || '6', 10);
 
 	useEffect(() => {
 		if (!yearParam) {
-			router.push(`/members?all=true&year=6`); // Redirect to year 6 if no year param
+			router.push(`/members?all=true&year=6`);
 		}
 	}, [yearParam, router]);
 
@@ -46,12 +46,16 @@ export const AllMember = () => {
 			<div className='w-[30%] mb-20 m-auto'>
 				<Select onValueChange={setFilter}>
 					<SelectTrigger className=''>
-						<SelectValue placeholder='검색하고자 하는 기수를 눌러주세요' />
+						<SelectValue placeholder='기수 선택' />
 					</SelectTrigger>
 					<SelectContent className='bg-slate-400'>
 						<SelectGroup>
 							{ALL_YEARS.map((num) => (
-								<SelectItem key={num} value={num.toString()}>
+								<SelectItem
+									key={num}
+									value={num.toString()}
+									className='cursor-pointer'
+								>
 									{num}기
 								</SelectItem>
 							))}

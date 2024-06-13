@@ -4,6 +4,7 @@ import { PROJECTS } from '@/constants/projects';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight, Dot } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const ProjectCarousel = () => {
 	const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -37,21 +38,45 @@ export const ProjectCarousel = () => {
 
 	return (
 		<>
-			<div className='mt-[200px]'>
+			<motion.div
+				className='mt-[200px]'
+				initial={{ opacity: 0, y: 50 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: false }}
+				transition={{
+					ease: 'easeInOut',
+					duration: 2,
+					y: { duration: 1 },
+				}}
+			>
 				<h1 className='text-green-500 dark:text-green-700- font-bold text-5xl mb-10'>
 					PROJECTS
 				</h1>
-				<h3 className='text-slate-200 text-lg'>
+				<h3 className='dark:text-zinc-300 text-black font-bold text-lg'>
 					University MakeUs Challenge 데모데이 프로젝트 - SMUMC
 				</h3>
-			</div>
-			<div
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: false }}
+				transition={{
+					ease: 'easeInOut',
+					duration: 2,
+					y: { duration: 1 },
+				}}
 				className='max-w-[1200px] h-[780px] w-full m-auto py-16 px-4 relative group'
 				onMouseEnter={() => setHover(true)}
 				onMouseLeave={() => setHover(false)}
 			>
 				<div
-					style={{ backgroundImage: `url(${PROJECTS[currentIndex].img})` }}
+					style={{
+						backgroundImage: `url(${
+							PROJECTS[currentIndex]?.img
+								? PROJECTS[currentIndex].img
+								: '/images/demodayposter.webp'
+						})`,
+					}}
 					className='w-full h-full rounded-2xl bg-center bg-cover duration-500 object-contain'
 				/>
 				{hover && (
@@ -95,8 +120,8 @@ export const ProjectCarousel = () => {
 				<div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
 					<ChevronRight size={30} onClick={nextSlide} />
 				</div>
-				<div className='flex top-4 justify-center py-2'>
-					{PROJECTS.map((project, slideIndex) => (
+				<div className='flex top-4 justify-center mt-20'>
+					{PROJECTS.map((_, slideIndex) => (
 						<div
 							key={slideIndex}
 							onClick={() => goToSlide(slideIndex)}
@@ -109,7 +134,7 @@ export const ProjectCarousel = () => {
 						</div>
 					))}
 				</div>
-			</div>
+			</motion.div>
 		</>
 	);
 };

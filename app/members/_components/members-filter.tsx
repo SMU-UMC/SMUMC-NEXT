@@ -23,7 +23,7 @@ export const MembersFilter = () => {
 
 	return (
 		<div>
-			<h1 className='text-green-700 dark:text-green-700 font-bold text-5xl mb-10 mt-[100px]'>
+			<h1 className='text-green-400 animate-blink font-bold text-5xl mb-10 mt-[100px]'>
 				역대 UMC 멤버
 			</h1>
 			<div className='flex items-center justify-center gap-20'>
@@ -42,7 +42,7 @@ export const MembersFilter = () => {
 					Member List
 				</Button>
 			</div>
-			<div className='mt-10'>
+			<div className='mt-10 flex flex-col items-center justify-center'>
 				{all && <AllMember />}
 				{!all && <ActiveMember />}
 			</div>
