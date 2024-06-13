@@ -34,7 +34,7 @@ export const ProjectCarousel = () => {
 		}, 3000);
 
 		return () => clearInterval(interval);
-	}, [currentIndex, hover,]);
+	}, [currentIndex, hover]);
 
 	return (
 		<>
