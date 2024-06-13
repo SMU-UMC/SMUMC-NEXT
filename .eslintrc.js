@@ -9,7 +9,7 @@ module.exports = {
 
 		// 프리티어 설정
 		'prettier/prettier': [
-			'error',
+			'{}',
 			// 아래 규칙들은 개인 선호에 따라 prettier 문법 적용
 			// https://prettier.io/docs/en/options.html
 			{
