@@ -26,6 +26,17 @@ export const metadata: Metadata = {
 			},
 		],
 	},
+	openGraph: {
+		title: 'SMUMC 사이트에 오신 것을 환영합니다!',
+		description: 'YAHO SMUMC CODING',
+		siteName: 'SMUMC',
+		locale: 'ko_KR',
+		type: 'website',
+		url: 'https://www.smumc.co.kr/',
+		images: {
+			url: '/logo.svg',
+		},
+	},
 };
 
 export default function RootLayout({
