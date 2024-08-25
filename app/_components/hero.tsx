@@ -62,8 +62,11 @@ export const Hero = () => {
 					<Button
 						variant="ghost"
 						className="bg-green-200 text-black rounded-2xl font-bold background-blink"
+						onClick={() => {
+							window.open('https://forms.gle/CQneU5oj8XBHbrGa7', '_blank');
+						}}
 					>
-						7기 모집예정
+						🔥 7기 모집 진행중 🔥
 					</Button>
 				</motion.div>
 			</div>
