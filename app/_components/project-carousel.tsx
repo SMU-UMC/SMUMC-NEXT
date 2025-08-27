@@ -88,18 +88,19 @@ export const ProjectCarousel = () => {
 							{PROJECTS[currentIndex].description}
 						</p>
 						<div className="flex flex-col justify-center">
-							<p className="text-white text-sm mr-2 mb-2">
+							<div className="text-white text-sm mr-2 mb-2 flex flex-wrap">
 								{PROJECTS[currentIndex].member.map((m, idx) => {
 									return (
-										<div key={idx} className="flex flex-col gap-10">
-											<h3 className="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2">
-												{m}
-											</h3>
-										</div>
+										<span
+											key={idx}
+											className="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2"
+										>
+											{m}
+										</span>
 									);
 								})}
-							</p>
-							<p className="text-white text-sm mb-2">
+							</div>
+							<div className="text-white text-sm mb-2">
 								{PROJECTS[currentIndex].stack.map((s, idx) => (
 									<span
 										key={idx}
@@ -108,7 +109,7 @@ export const ProjectCarousel = () => {
 										{s}
 									</span>
 								))}
-							</p>
+							</div>
 						</div>
 					</div>
 				)}
