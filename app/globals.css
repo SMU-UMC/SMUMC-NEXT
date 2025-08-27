@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-black text-zinc-50 min-h-screen;
+    @apply bg-[#18171c] text-zinc-50 min-h-screen;
   }
 }
 
@@ -25,5 +25,41 @@
 
   .animate-float {
     animation: float 2.5s ease-in-out infinite;
+  }
+
+  @keyframes rotate-mirror {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .animate-rotate-mirror {
+    animation: rotate-mirror 5s cubic-bezier(0.44, 0, 0.56, 1) infinite;
+  }
+
+  .gradient-conic-white {
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+  }
+
+  .gradient-green-fade {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(87, 196, 126, 0.08) 100%
+    );
+    backdrop-filter: blur(10px);
   }
 }

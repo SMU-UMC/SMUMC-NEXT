@@ -1,12 +1,13 @@
 import { Hero } from './_components/hero';
+import { InfoBox } from './_components/info-box';
 
 const HomePage = () => {
 	return (
 		<div className="min-h-full flex flex-col">
-			<div className="flex flex-col items-center justify-center md:justify-start text-center flex-1 px-6 pb-20">
+			<div className="flex flex-col items-center justify-center md:justify-start text-center flex-1 px-6 pb-100 gap-100">
 				<Hero />
-				{/* <InfoBox />
-				<PartInfo />
+				<InfoBox />
+				{/* <PartInfo />
 				<ProjectCarousel />
 				<RecentIssue /> */}
 			</div>

@@ -16,7 +16,7 @@ export const Navbar = () => {
 			<div className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
 				<NavLink href="/projects">Projects</NavLink>
 				<NavLink href="/members">Members</NavLink>
-				<NavLink href="/notice">Notice</NavLink>
+				<NavLink href="/notice">FAQ</NavLink>
 			</div>
 		</div>
 	);
