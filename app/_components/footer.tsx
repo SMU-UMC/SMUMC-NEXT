@@ -1,25 +1,21 @@
 'use client';
 
 import React from 'react';
-import Logo from './logo';
-import { Button } from '@/components/ui/button';
-
-const contactEmail = 'dydals3440@gmail.com';
+import Link from 'next/link';
+import { FaInstagram } from 'react-icons/fa';
 
 export const Footer = () => {
-	const handleContactClick = () => {
-		window.location.href = `mailto:${contactEmail}`;
-	};
 	return (
-		<div className="flex items-center w-full p-6 bg-background z-50  dark:bg-[#1F1F1F]">
-			<Logo />
-			<div className="md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-2 text-muted-foreground">
-				<Button variant="ghost" size="sm">
-					Privacy Policy
-				</Button>
-				<Button variant="ghost" size="sm" onClick={handleContactClick}>
-					Contact To
-				</Button>
+		<div className="flex items-center justify-between w-full py-6 px-10 z-50">
+			<p className="text-zinc-300 text-sm">© SMUMC 2025.</p>
+			<div className="flex items-center gap-x-2">
+				<Link
+					href={'https://www.instagram.com/smu_makeus_challenge/'}
+					target="_blank"
+					className="bg-zinc-800 rounded-full p-2 text-zinc-400 hover:text-zinc-200 transition-all duration-300"
+				>
+					<FaInstagram />
+				</Link>
 			</div>
 		</div>
 	);

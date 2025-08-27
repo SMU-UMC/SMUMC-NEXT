@@ -38,7 +38,7 @@ export default function RootLayout({
 				className={cn('font-sans antialiased', inter.variable)}
 				suppressHydrationWarning
 			>
-				<div className="relative flex flex-col size-full">
+				<div className="relative flex flex-col size-full min-h-dvh">
 					<Navbar />
 					<main className="flex-1">{children}</main>
 					<Footer />
