@@ -1,7 +1,7 @@
 import { Member } from '@/types/domain';
-import { BiSolidCrown } from 'react-icons/bi';
-
+import { SiGithub } from 'react-icons/si';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface MemberCardProps {
 	member: Member;
@@ -9,24 +9,43 @@ interface MemberCardProps {
 
 export const MemberCard = ({ member }: MemberCardProps) => {
 	return (
-		<div className="flex flex-col items-center w-[200px] h-[300px] p-3 bg-[#E3E1E2] relative gap-10 rounded-2xl">
-			<div className="flex flex-col items-center justify-center mt-10 relative">
-				<Image
-					src={member.sex === 'w' ? '/images/woman.png' : '/images/man.png'}
-					alt={member.name}
-					width={105}
-					height={105}
-					className="object-cover border-white border rounded-full"
-				/>
-				{member.position !== '챌린저' && (
-					<BiSolidCrown color="#E6A912" className="absolute top-[-16px] " />
-				)}
-			</div>
-			<div className="">
-				<h3 className="mb-2 text-green-800 font-bold">{member.position}</h3>
-				<h3 className="font-bold text-slate-700 text-xl">{member.name}</h3>
-				<div className="text-green-800 text-sm">
-					{member.year}기 {member.part}
+		<div className="border border-zinc-200/80  bg-white/80 rounded-xl relative w-full h-56">
+			<div className="flex items-center justify-between p-6">
+				<div className="flex flex-col justify-center">
+					<span className="bg-zinc-100 text-zinc-600 text-xs font-medium px-2 py-1 rounded-md inline-block w-fit mb-2">
+						{member.position}
+					</span>
+
+					<div className="flex items-center gap-2">
+						<h3 className="font-bold text-zinc-900 text-2xl">{member.name}</h3>
+						{member.github && (
+							<Link
+								href={`https://github.com/${member.github}`}
+								target="_blank"
+							>
+								<SiGithub
+									className="text-zinc-500 hover:text-zinc-600"
+									size={17}
+								/>
+							</Link>
+						)}
+					</div>
+
+					<div className="text-zinc-500 text-sm">
+						{member.year}기 {member.part}
+					</div>
+				</div>
+
+				<div className="absolute right-2 bottom-2 rounded-full overflow-hidden">
+					<Image
+						src="/images/mascot.webp"
+						alt="mascot"
+						priority
+						aria-hidden
+						width={150}
+						height={150}
+						className="object-contain p-4"
+					/>
 				</div>
 			</div>
 		</div>

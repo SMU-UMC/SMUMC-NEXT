@@ -4,7 +4,8 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ReactNode } from 'react';
-import { GoHome } from 'react-icons/go';
+import { IoHomeOutline } from 'react-icons/io5';
+
 export const Navbar = () => {
 	return (
 		<div
@@ -14,7 +15,9 @@ export const Navbar = () => {
 		>
 			{/* <Logo /> */}
 			<div className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
-				<NavLink href="/">home</NavLink>
+				<NavLink href="/">
+					<IoHomeOutline size={20} />
+				</NavLink>
 				<NavLink href="/projects">Projects</NavLink>
 				<NavLink href="/members">Members</NavLink>
 				<NavLink href="/notice">FAQ</NavLink>
