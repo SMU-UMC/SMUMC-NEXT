@@ -1,5 +1,6 @@
 import { Hero } from './_components/hero';
 import { InfoBox } from './_components/info-box';
+import { PartInfo } from './_components/part-info';
 
 const HomePage = () => {
 	return (
@@ -7,8 +8,8 @@ const HomePage = () => {
 			<div className="flex flex-col items-center justify-center md:justify-start text-center flex-1 px-6 pb-100 gap-100">
 				<Hero />
 				<InfoBox />
-				{/* <PartInfo />
-				<ProjectCarousel />
+				<PartInfo />
+				{/* <ProjectCarousel />
 				<RecentIssue /> */}
 			</div>
 		</div>

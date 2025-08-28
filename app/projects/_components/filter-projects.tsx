@@ -31,7 +31,7 @@ export const FilterProjects = () => {
 			<h1 className="text-green-500 dark:text-green-700 font-bold text-5xl mb-10 mt-[100px]">
 				PROJECTS
 			</h1>
-			<h3 className="text-black dark:text-slate-200 text-lg">
+			<h3 className="text-lg">
 				SMUMC 멤버들이 참여한 <br /> 다양한 프로젝트를 확인해 보세요!
 			</h3>
 			<div className="flex gap-10 py-10">
