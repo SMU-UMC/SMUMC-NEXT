@@ -9,23 +9,21 @@ export interface ProjectCardProps {
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
 	const router = useRouter();
+
 	return (
-		<div
-			key={project.id}
-			className="bg-white shadow-md rounded-2xl h-[370px] w-[270px]"
-		>
-			<div className="relative w-full h-[55%] rounded-2xl bg-center bg-cover duration-500">
-				<Image
-					src={project.img ? project.img : '/images/demodayposter.webp'}
-					alt={project.name}
-					fill
-					className="object-cover rounded-t-2xl"
-				/>
-			</div>
-			<div className="flex flex-col items-start p-3 h-[45%] w-full">
+		<div className="flex flex-col gap-1 h-full">
+			<Image
+				src={project.img ? project.img : '/images/demodayposter.webp'}
+				alt={project.name}
+				width={400}
+				height={200}
+				className="object-cover rounded-lg aspect-[16/9] "
+			/>
+
+			<div className="flex flex-col items-start p-3 w-full gap-1 flex-1">
 				<div className="flex gap-2 justify-center items-center">
-					<h4 className="text-sm font-bold text-slate-500">{project.name}</h4>
-					{project.github && (
+					<h4 className="text-lg font-extrabold">{project.name}</h4>
+					{/* {project.github && (
 						<FaGithub
 							size="15"
 							onClick={() => {
@@ -42,25 +40,29 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 							}}
 							className="hover:text-green-700 cursor-pointer"
 						/>
-					)}
+					)} */}
+					<p className="text-green-500 font-semibold">{project.year}기</p>
 				</div>
-				<div className="flex gap-2 mt-1">
-					{project.stack.map((tech: string, idx: number) => (
-						<span
-							key={idx}
-							className="bg-[#5C946B] text-[11px] text-white py-1 px-2 rounded-2xl"
-						>
-							{tech}
+
+				<p className="font-semibold w-full text-sm truncate flex flex-start">
+					{project.description}
+				</p>
+
+				<div className="mt-2 flex gap-2 flex-wrap flex-1">
+					{project.member.map((m, idx) => (
+						<span key={idx} className="text-[11px] break-word text-zinc-400">
+							{m}
 						</span>
 					))}
 				</div>
-				<p className="mt-2 w-full text-sm text-black truncate flex flex-start">
-					{project.description}
-				</p>
-				<div className="mt-5 flex gap-2 flex-wrap">
-					{project.member.map((m, idx) => (
-						<span key={idx} className="text-[12px] break-word text-black ">
-							{m}
+
+				<div className="flex gap-2 mt-2">
+					{project.stack.map((tech: string, idx: number) => (
+						<span
+							key={idx}
+							className="text-[9px] border text-zinc-400 border-zinc-700 py-1 px-2 rounded-sm"
+						>
+							{tech}
 						</span>
 					))}
 				</div>

@@ -18,6 +18,7 @@ interface TabSelectorProps {
 	activeColor?: string;
 	defaultActiveId?: string | number;
 	tabContainerClassName?: string;
+	onTabChange?: (id: string | number) => void;
 }
 
 export const TabSelector = ({
@@ -28,6 +29,7 @@ export const TabSelector = ({
 	defaultActiveId,
 	contentClassName,
 	tabContainerClassName,
+	onTabChange,
 }: TabSelectorProps) => {
 	const [activeId, setActiveId] = useState<string | number>(
 		defaultActiveId || items[0]?.id || 0,
@@ -37,6 +39,11 @@ export const TabSelector = ({
 	useEffect(() => {
 		setIsClient(true);
 	}, []);
+
+	const handleTabClick = (id: string | number) => {
+		setActiveId(id);
+		onTabChange?.(id);
+	};
 
 	const activeItem = items.find(item => item.id === activeId);
 
@@ -53,7 +60,7 @@ export const TabSelector = ({
 						{items.map(item => (
 							<motion.button
 								key={item.id}
-								onClick={() => setActiveId(item.id)}
+								onClick={() => handleTabClick(item.id)}
 								className={cn(
 									'relative px-8 py-3 rounded-full font-medium transition-colors',
 									tabClassName,
