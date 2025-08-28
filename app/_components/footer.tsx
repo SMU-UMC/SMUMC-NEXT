@@ -4,31 +4,63 @@ import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { FaInstagram } from 'react-icons/fa';
 import { RxNotionLogo } from 'react-icons/rx';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
+import { RiKakaoTalkFill } from 'react-icons/ri';
 
 export const Footer = () => {
+	const pathname = usePathname();
+	const isNoticePage = pathname === '/notice';
+
 	return (
-		<div className="flex items-center justify-between w-full py-6 px-10 z-50">
-			<p className="text-zinc-300 text-sm">© SMUMC 2025.</p>
+		<div
+			className={cn(
+				'flex items-center justify-between w-full py-6 px-10 z-50',
+				isNoticePage && 'bg-zinc-50',
+			)}
+		>
+			<p
+				className={cn('text-sm text-zinc-300', isNoticePage && 'text-zinc-600')}
+			>
+				© SMUMC 2025.
+			</p>
 			<div className="flex items-center gap-x-2">
-				<SnsLink href={'https://www.instagram.com/smu_makeus_challenge/'}>
+				<SnsLink
+					href={'https://www.instagram.com/smu_makeus_challenge/'}
+					isLight={isNoticePage}
+				>
 					<FaInstagram />
 				</SnsLink>
 				<SnsLink
-					href={'https://www.notion.so/32ddbcde1075427ab516333993806785?pvs=21'}
+					href={'https://open.kakao.com/o/s0RE3nIh'}
+					isLight={isNoticePage}
 				>
-					<RxNotionLogo />
+					<RiKakaoTalkFill />
 				</SnsLink>
 			</div>
 		</div>
 	);
 };
 
-const SnsLink = ({ href, children }: { href: string; children: ReactNode }) => {
+const SnsLink = ({
+	href,
+	children,
+	isLight = false,
+}: {
+	href: string;
+	children: ReactNode;
+	isLight?: boolean;
+}) => {
 	return (
 		<Link
 			href={href}
 			target="_blank"
-			className="bg-zinc-800 rounded-full p-2 text-zinc-400 hover:text-zinc-200 transition-all duration-300"
+			className={cn(
+				'rounded-full p-2 transition-all duration-300',
+				isLight
+					? 'bg-zinc-200 text-zinc-600 hover:text-zinc-800 hover:bg-zinc-300'
+					: 'bg-zinc-800 text-zinc-400 hover:text-zinc-200',
+			)}
 		>
 			{children}
 		</Link>
