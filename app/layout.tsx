@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import { Footer } from './_components/footer';
 import { Navbar } from './_components/navbar';
 import { cn } from '@/lib/utils';
 import React from 'react';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
 	title: 'SMUMC',
@@ -33,11 +30,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ko" className="scroll-pt-[3.5rem]" suppressHydrationWarning>
-			<body
-				className={cn('font-sans antialiased', inter.variable)}
-				suppressHydrationWarning
-			>
+		<html lang="ko" className="scroll-pt-[3.5rem]">
+			<body className="antialiased" suppressHydrationWarning>
 				<div className="relative flex flex-col size-full min-h-dvh">
 					<Navbar />
 					<main className="flex-1">{children}</main>

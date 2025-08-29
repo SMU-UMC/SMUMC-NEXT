@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ReactNode } from 'react';
-import { IoHomeOutline } from 'react-icons/io5';
+import { HiOutlineFire } from 'react-icons/hi2';
 
 export const Navbar = () => {
 	return (
@@ -13,10 +13,9 @@ export const Navbar = () => {
 				'z-50 fixed top-0 flex items-center justify-between w-full p-10',
 			)}
 		>
-			{/* <Logo /> */}
 			<div className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
 				<NavLink href="/">
-					<IoHomeOutline size={20} />
+					<HiOutlineFire size={20} />
 				</NavLink>
 				<NavLink href="/projects">Projects</NavLink>
 				<NavLink href="/members">Members</NavLink>
