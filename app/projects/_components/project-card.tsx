@@ -1,7 +1,9 @@
 import { Project } from '@/types';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { FaGithub, FaPaperclip } from 'react-icons/fa';
+import Link from 'next/link';
+import { FaGithub } from 'react-icons/fa';
+import { ArrowUpRight } from 'lucide-react';
 
 export interface ProjectCardProps {
 	project: Project;
@@ -11,9 +13,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 	const router = useRouter();
 
 	return (
-		<div className="flex flex-col gap-1 size-full">
+		<div className="flex flex-col gap-1 size-full max-w-xs">
 			<Image
-				src={project.img ? project.img : '/images/demodayposter.webp'}
+				src={project.img ? project.img : '/images/default_project.webp'}
 				alt={project.name}
 				width={400}
 				height={200}
@@ -21,27 +23,38 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 			/>
 
 			<div className="flex flex-col items-start p-3 w-full gap-1 flex-1">
-				<div className="flex gap-2 justify-center items-center">
-					<h4 className="text-lg font-extrabold">{project.name}</h4>
-					{/* {project.github && (
-						<FaGithub
-							size="15"
-							onClick={() => {
-								router.push(`${project.github}`);
-							}}
-							className="hover:text-green-700 cursor-pointer"
-						/>
-					)}
-					{project.release && (
-						<FaPaperclip
-							size="15"
-							onClick={() => {
-								router.push(`${project.release}`);
-							}}
-							className="hover:text-green-700 cursor-pointer"
-						/>
-					)} */}
-					<p className="text-green-500 font-semibold">{project.year}기</p>
+				<div className="flex justify-between items-center w-full">
+					<div className="flex gap-2 justify-center items-center">
+						<h4 className="text-lg font-extrabold">{project.name}</h4>
+						<p className="text-green-500 font-semibold">{project.year}기</p>
+					</div>
+
+					<div className="flex gap-2">
+						{project.github && (
+							<Link
+								href={project.github}
+								target="_blank"
+								className="cursor-pointer"
+							>
+								<FaGithub
+									size={16}
+									className="hover:text-zinc-200 text-zinc-400 transition-colors duration-300"
+								/>
+							</Link>
+						)}
+						{project.release && (
+							<Link
+								href={project.release}
+								target="_blank"
+								className="cursor-pointer"
+							>
+								<ArrowUpRight
+									size={16}
+									className="hover:text-zinc-200 text-zinc-400 transition-colors duration-300"
+								/>
+							</Link>
+						)}
+					</div>
 				</div>
 
 				<p className="font-semibold w-full text-sm truncate flex flex-start">

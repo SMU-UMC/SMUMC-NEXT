@@ -1,9 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { CounterCard } from './counter-card';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const listVariants = {
 	hidden: {
@@ -14,6 +12,7 @@ const listVariants = {
 		opacity: 1,
 		y: 0,
 		transition: {
+			delay: 0.3, // 전체 애니메이션 시작을 0.3초 지연
 			staggerChildren: 0.5,
 		},
 	},
@@ -31,7 +30,7 @@ const itemVariants = {
 
 export const InfoBox = () => {
 	return (
-		<motion.div
+		<motion.section
 			initial={{ opacity: 0, y: 50 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: false }}
@@ -54,33 +53,30 @@ export const InfoBox = () => {
 					여러분을 기다립니다.
 				</h2>
 			</div>
-			<AnimatePresence>
-				<motion.ul
-					key="list1"
-					initial="hidden"
-					animate="visible"
-					exit="exit"
-					variants={listVariants}
-					className="w-full flex flex-wrap gap-2 justify-center items-center px-4 md:px-0"
-				>
-					{[
-						'스터디',
-						'해커톤',
-						'미니 프로젝트',
-						'데모데이',
-						'파트별 컨퍼런스',
-					].map((text, idx) => (
-						<motion.li
-							key={idx}
-							variants={itemVariants}
-							transition={{ type: 'spring' }}
-							className=" bg-green-50/5 px-4 py-2 rounded-2xl border border-green-50/10"
-						>
-							<h3 className="text-green-100 text-xs">{text}</h3>
-						</motion.li>
-					))}
-				</motion.ul>
-			</AnimatePresence>
+			<motion.ul
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.3 }}
+				variants={listVariants}
+				className="w-full flex flex-wrap gap-2 justify-center items-center px-4 md:px-0"
+			>
+				{[
+					'스터디',
+					'해커톤',
+					'미니 프로젝트',
+					'데모데이',
+					'파트별 컨퍼런스',
+				].map((text, idx) => (
+					<motion.li
+						key={idx}
+						variants={itemVariants}
+						transition={{ type: 'spring' }}
+						className=" bg-green-50/5 px-4 py-2 rounded-2xl border border-green-50/10"
+					>
+						<h3 className="text-green-100 text-xs">{text}</h3>
+					</motion.li>
+				))}
+			</motion.ul>
 
 			<div className="flex gap-5 flex-col md:flex-row gradient-green-fade border border-green-50/1 rounded-2xl p-4 w-full">
 				<CounterCard
@@ -95,6 +91,6 @@ export const InfoBox = () => {
 					lastUnit="기"
 				/>
 			</div>
-		</motion.div>
+		</motion.section>
 	);
 };

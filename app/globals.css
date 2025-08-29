@@ -12,6 +12,44 @@
 }
 
 @layer utilities {
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .animate-scroll-right {
+    animation: scroll-right 30s linear infinite;
+  }
+
+  .swiper-continuous-left .swiper-wrapper {
+    transition-timing-function: linear !important;
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+  }
+
+  .swiper-continuous-right .swiper-wrapper {
+    transition-timing-function: linear !important;
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+  }
+
   @keyframes float {
     0%,
     100% {
@@ -63,4 +101,42 @@
     );
     backdrop-filter: blur(10px);
   }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-overflow-3 {
+    @apply overflow-hidden text-ellipsis;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* 스크롤바 트랙 꾸미기 */
+::-webkit-scrollbar-track {
+  background: #28272d;
+  border-radius: 5px;
+}
+
+/* 스크롤바 손잡이 꾸미기 */
+::-webkit-scrollbar-thumb {
+  background: #156327;
+  border-radius: 20px;
+}
+
+/* 스크롤바 손잡이 호버 시 색 */
+::-webkit-scrollbar-thumb:hover {
+  background: #1d8134;
 }

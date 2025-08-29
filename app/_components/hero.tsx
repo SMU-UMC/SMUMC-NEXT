@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const Hero = () => {
 	return (
-		<div className="flex flex-col justify-center items-center gap-1 mt-50">
+		<section className="flex flex-col justify-center items-center gap-1 mt-50">
 			<Image
 				priority
 				src="/images/logo.webp"
@@ -26,6 +26,6 @@ export const Hero = () => {
 					9기 모집중 <FiArrowUpRight />
 				</Link>
 			</GradientButton>
-		</div>
+		</section>
 	);
 };

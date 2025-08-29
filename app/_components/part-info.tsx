@@ -16,7 +16,7 @@ export const PartInfo = () => {
 	}));
 
 	return (
-		<motion.div
+		<motion.section
 			initial={{ opacity: 0, y: 50 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: false }}
@@ -38,6 +38,6 @@ export const PartInfo = () => {
 			</h1>
 
 			<TabSelector items={tabItems} defaultActiveId={PART[0].id} />
-		</motion.div>
+		</motion.section>
 	);
 };

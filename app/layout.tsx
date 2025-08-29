@@ -30,7 +30,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ko" className="scroll-pt-[3.5rem]">
+		<html lang="ko" className="scroll-pt-[3.5rem]" suppressHydrationWarning>
 			<body className="antialiased" suppressHydrationWarning>
 				<div className="relative flex flex-col size-full min-h-dvh">
 					<Navbar />

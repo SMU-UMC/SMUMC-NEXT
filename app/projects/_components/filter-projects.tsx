@@ -30,9 +30,7 @@ export const FilterProjects = () => {
 							? [...PROJECTS].sort((a, b) => b.year - a.year)
 							: PROJECTS.filter(p => p.year.toString() === year.toString())
 						).map(project => (
-							<div key={project.id} className="w-full max-w-sm">
-								<ProjectCard project={project} />
-							</div>
+							<ProjectCard project={project} key={project.id} />
 						))}
 					</div>
 				</div>
@@ -52,7 +50,7 @@ export const FilterProjects = () => {
 				</h3>
 			</div>
 
-			<div className="w-full max-w-7xl px-4 mt-16">
+			<div className="w-full max-w-8xl px-4 mt-16">
 				<TabSelector
 					items={tabItems}
 					defaultActiveId={tag}
