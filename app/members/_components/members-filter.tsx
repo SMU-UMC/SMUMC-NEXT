@@ -10,7 +10,7 @@ import { AllMember } from './all-member';
 export const MembersFilter = () => {
 	const searchParams = useSearchParams();
 	const all = searchParams.get('all');
-	const [activeTab, setActiveTab] = useState(
+	const [activeTab, _setActiveTab] = useState(
 		all ? 'member-list' : 'active-member',
 	);
 

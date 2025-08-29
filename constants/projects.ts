@@ -1,4 +1,6 @@
-const PROJECTS = [
+import { Project } from '@/types';
+
+const PROJECTS: Project[] = [
 	{
 		id: 1,
 		name: '가치더치(TogeDutch)',
@@ -142,7 +144,6 @@ const PROJECTS = [
 		year: 4,
 		member: ['엘레나/권유정', '우현/이현우'],
 		stack: ['KOTLIN', 'SPRING'],
-		img: null,
 		release: null,
 	},
 	{
@@ -242,7 +243,6 @@ const PROJECTS = [
 		year: 4,
 		member: ['블루/최민주', '하비/이승주'],
 		stack: ['REACT', 'SPRING'],
-		img: null,
 		release: 'https://www.makeus.in/7dc138b3-7738-42a9-aa25-a36f85e4b847',
 	},
 	{
@@ -260,6 +260,18 @@ const PROJECTS = [
 	},
 	{
 		id: 20,
+		name: '스포너스',
+		description: '기업과 대학생이 만나는 자리',
+		theme: ['IOS', 'SPRING'],
+		github: 'https://github.com/spon-us',
+		year: 5,
+		member: ['가니/박가은', '니니/김유빈', '피딕/황인성', '세헌/호세헌'],
+		stack: ['SWIFT', 'SPRING'],
+		img: '/5year/스포너스/sponus.png',
+		release: '',
+	},
+	{
+		id: 21,
 		name: '고민친구',
 		description: '세상의 모든 고민이 거쳐가는 공간, 고민친구',
 		theme: ['WEB', 'SPRING'],
@@ -271,7 +283,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 21,
+		id: 22,
 		name: 'AboutMe',
 		description: '다양한 나, 다양한 관계의 시작',
 		theme: ['ANDROID', 'SPRING'],
@@ -283,7 +295,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 22,
+		id: 23,
 		name: 'Draw Desktop',
 		description:
 			'개성 있게 간편하면서 직관적으로 바탕 화면을 꾸밀 수 있는 요소를 제공',
@@ -296,7 +308,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 23,
+		id: 24,
 		name: 'Rhythm Palette',
 		description: '#음악공유 #이미지생성 #SNS',
 		theme: ['WEB', 'SPRING'],
@@ -308,7 +320,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 24,
+		id: 25,
 		name: 'Writeroom',
 		description: '자유로운 창작의 공간',
 		theme: ['WEB', 'SPRING'],
@@ -320,7 +332,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 25,
+		id: 26,
 		name: '다온',
 		description: '암환자들을 위한 하루 기록 서비스',
 		theme: ['ANDROID', 'NODE'],
@@ -332,7 +344,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 26,
+		id: 27,
 		name: '더 굿즈',
 		description: '개인 판매자 대상 온라인 주문서 플랫폼',
 		theme: ['WEB', 'SPRING'],
@@ -344,7 +356,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 27,
+		id: 28,
 		name: '아브아브',
 		description: '레크레이션 종합 플랫폼 서비스',
 		theme: ['WEB', 'SPRING'],
@@ -356,7 +368,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 28,
+		id: 29,
 		name: '메메',
 		description: '나만의 메이크업 메이트',
 		theme: ['IOS', 'SPRING'],
@@ -368,7 +380,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 29,
+		id: 30,
 		name: '마플',
 		description: '사용자 저장 장소 기반 기록 + 일정 관리 서비스 : 마플',
 		theme: ['IOS', 'NODE'],
@@ -380,19 +392,7 @@ const PROJECTS = [
 		release: '',
 	},
 	{
-		id: 30,
-		name: '스포너스',
-		description: '기업과 대학생이 만나는 자리',
-		theme: ['IOS', 'SPRING'],
-		github: 'https://github.com/spon-us',
-		year: 5,
-		member: ['가니/박가은', '니니/김유빈', '피딕/황인성', '세헌/호세헌'],
-		stack: ['SWIFT', 'SPRING'],
-		img: '/5year/스포너스/sponus.png',
-		release: '',
-	},
-	{
-		id: 31,
+		id: 32,
 		name: '이사.ZIP',
 		description: '이사를 위한 정보',
 		theme: ['ANDROID', 'SPRING'],
@@ -403,8 +403,20 @@ const PROJECTS = [
 		img: '/5year/이사/이사.png',
 		release: '',
 	},
+	{
+		id: 33,
+		name: 'QASTUDIO',
+		description: '역할 기반 자동화 테스트 제공 서비스',
+		theme: ['WEB', 'SPRING'],
+		github: 'https://github.com/QASTUDIODEV',
+		year: 7,
+		member: ['조이/정혜원', '코튼/김연진', '제이미/김준환'],
+		stack: ['REACT', 'SPRING'],
+		img: '/7year/QASTUDIO/QASTUDIO.png',
+		release: '',
+	},
 ];
 
-const PROJECTS_YEAR = ['All', 5, 4, 3];
+const PROJECTS_YEAR = ['All', 7, 5, 4, 3];
 
 export { PROJECTS, PROJECTS_YEAR };

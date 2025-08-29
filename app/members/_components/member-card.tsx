@@ -1,4 +1,4 @@
-import { Member } from '@/types/domain';
+import { Member } from '@/types';
 import { SiGithub } from 'react-icons/si';
 import Image from 'next/image';
 import Link from 'next/link';

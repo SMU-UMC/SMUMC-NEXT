@@ -1,17 +1,17 @@
-import { Projects } from '@/types/domain';
+import { Project } from '@/types';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FaGithub, FaPaperclip } from 'react-icons/fa';
 
 export interface ProjectCardProps {
-	project: Projects;
+	project: Project;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
 	const router = useRouter();
 
 	return (
-		<div className="flex flex-col gap-1 h-full">
+		<div className="flex flex-col gap-1 size-full">
 			<Image
 				src={project.img ? project.img : '/images/demodayposter.webp'}
 				alt={project.name}

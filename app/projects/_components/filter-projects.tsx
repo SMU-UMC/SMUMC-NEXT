@@ -26,12 +26,10 @@ export const FilterProjects = () => {
 			content: (
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-8 mt-16 w-full items-stretch justify-items-center">
 					{(year === 'All'
-						? PROJECTS
+						? [...PROJECTS].sort((a, b) => b.year - a.year)
 						: PROJECTS.filter(p => p.year.toString() === year.toString())
 					).map(project => (
-						<div key={project.id} className="w-full max-w-sm">
-							<ProjectCard project={project} />
-						</div>
+						<ProjectCard project={project} key={project.id} />
 					))}
 				</div>
 			),
