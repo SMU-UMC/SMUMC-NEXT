@@ -39,16 +39,16 @@ export const FilterProjects = () => {
 	}, []);
 
 	return (
-		<div className="flex flex-col items-center justify-center gap-4 size-full">
-			<div className="flex flex-col items-center justify-center text-center gap-4 mt-12">
+		<section className="flex flex-col items-center justify-center gap-4 size-full">
+			<header className="flex flex-col items-center justify-center text-center gap-4 mt-12">
 				<h1 className="text-white font-bold  text-5xl sm:text-8xl relative inline-block tracking-wider ">
 					PROJECTS
 					<span className="absolute bottom-2 left-0 right-0 h-[35%] bg-green-400/40 -z-10" />
 				</h1>
-				<h3 className="break-keep text-zinc-400 text-md font-semibold">
+				<p className="break-keep text-zinc-400 text-md font-semibold">
 					SMUMC 멤버들이 참여한 다양한 프로젝트를 확인해 보세요!
-				</h3>
-			</div>
+				</p>
+			</header>
 
 			<div className="w-full max-w-8xl px-4 mt-16">
 				<TabSelector
@@ -60,6 +60,6 @@ export const FilterProjects = () => {
 					onTabChange={setFilter}
 				/>
 			</div>
-		</div>
+		</section>
 	);
 };

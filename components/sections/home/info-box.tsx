@@ -1,6 +1,6 @@
 'use client';
 
-import { CounterCard } from './counter-card';
+import { CounterCard } from '@/components/ui/counter-card';
 import { motion } from 'framer-motion';
 
 const listVariants = {

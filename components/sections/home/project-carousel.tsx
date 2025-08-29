@@ -4,7 +4,7 @@ import { PROJECTS } from '@/constants/projects';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode } from 'swiper/modules';
-import { ProjectSlideCard } from './project-slide-card';
+import { ProjectSlideCard } from '@/components/ui/project-slide-card';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 
@@ -28,7 +28,7 @@ export const ProjectCarousel = () => {
 				className="w-full py-16 space-y-4 flex flex-col items-center justify-center relative"
 			>
 				<div className="flex flex-col items-center justify-center gap-1">
-					<h3 className="text-green-300 font-medium text-lg tracking-wider">
+					<h3 className="text-green-500 font-medium text-lg tracking-wider">
 						UMC DEMODAY
 					</h3>
 					<h1 className="font-extrabold text-4xl mb-30">

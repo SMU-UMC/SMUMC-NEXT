@@ -14,7 +14,7 @@ export const Footer = () => {
 	const isMemberPage = pathname === '/members';
 
 	return (
-		<div
+		<footer
 			className={cn(
 				'flex items-center justify-between w-full py-6 px-10 z-50',
 				isNoticePage && 'bg-zinc-50',
@@ -29,7 +29,7 @@ export const Footer = () => {
 			>
 				© SMUMC 2025.
 			</p>
-			<div className="flex items-center gap-x-2">
+			<nav className="flex items-center gap-x-2" aria-label="소셜 미디어 링크">
 				<SnsLink
 					href={'https://www.instagram.com/smu_makeus_challenge/'}
 					isLight={isNoticePage || isMemberPage}
@@ -42,8 +42,8 @@ export const Footer = () => {
 				>
 					<RiKakaoTalkFill />
 				</SnsLink>
-			</div>
-		</div>
+			</nav>
+		</footer>
 	);
 };
 

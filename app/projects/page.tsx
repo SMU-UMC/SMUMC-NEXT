@@ -1,10 +1,10 @@
-import { FilterProjects } from './_components/filter-projects';
+import { FilterProjects } from '@/components/sections/projects/filter-projects';
 
 const ProjectPage = () => {
 	return (
-		<div className="min-h-full flex flex-col py-40">
+		<main className="min-h-full flex flex-col py-40">
 			<FilterProjects />
-		</div>
+		</main>
 	);
 };
 

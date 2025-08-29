@@ -8,20 +8,20 @@ import { HiOutlineFire } from 'react-icons/hi2';
 
 export const Navbar = () => {
 	return (
-		<div
+		<header
 			className={cn(
 				'z-50 fixed top-0 flex items-center justify-between w-full p-10',
 			)}
 		>
-			<div className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
+			<nav className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
 				<NavLink href="/">
 					<HiOutlineFire size={20} />
 				</NavLink>
 				<NavLink href="/projects">Projects</NavLink>
 				<NavLink href="/members">Members</NavLink>
 				<NavLink href="/notice">FAQ</NavLink>
-			</div>
-		</div>
+			</nav>
+		</header>
 	);
 };
 

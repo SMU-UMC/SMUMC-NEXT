@@ -13,7 +13,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 	const router = useRouter();
 
 	return (
-		<div className="flex flex-col gap-1 size-full max-w-xs">
+		<article className="flex flex-col gap-1 size-full max-w-xs">
 			<Image
 				src={project.img ? project.img : '/images/default_project.webp'}
 				alt={project.name}
@@ -23,18 +23,19 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 			/>
 
 			<div className="flex flex-col items-start p-3 w-full gap-1 flex-1">
-				<div className="flex justify-between items-center w-full">
+				<header className="flex justify-between items-center w-full">
 					<div className="flex gap-2 justify-center items-center">
-						<h4 className="text-lg font-extrabold">{project.name}</h4>
+						<h3 className="text-lg font-extrabold">{project.name}</h3>
 						<p className="text-green-500 font-semibold">{project.year}기</p>
 					</div>
 
-					<div className="flex gap-2">
+					<nav className="flex gap-2" aria-label="프로젝트 링크">
 						{project.github && (
 							<Link
 								href={project.github}
 								target="_blank"
 								className="cursor-pointer"
+								aria-label={`${project.name} GitHub 저장소`}
 							>
 								<FaGithub
 									size={16}
@@ -47,6 +48,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 								href={project.release}
 								target="_blank"
 								className="cursor-pointer"
+								aria-label={`${project.name} 라이브 사이트`}
 							>
 								<ArrowUpRight
 									size={16}
@@ -54,8 +56,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 								/>
 							</Link>
 						)}
-					</div>
-				</div>
+					</nav>
+				</header>
 
 				<p className="font-semibold w-full text-sm truncate flex flex-start">
 					{project.description}
@@ -80,6 +82,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 					))}
 				</div>
 			</div>
-		</div>
+		</article>
 	);
 };

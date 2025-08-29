@@ -1,5 +1,5 @@
 import { MEMBERS } from '@/constants/members';
-import { MemberCard } from './member-card';
+import { MemberCard } from '@/components/ui/member-card';
 
 const CURRENT_YEAR = 8;
 

@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { MEMBERS } from '@/constants/members';
-import { MemberCard } from './member-card';
+import { MemberCard } from '@/components/ui/member-card';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ChevronDown, Check } from 'lucide-react';
 
