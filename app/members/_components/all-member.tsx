@@ -40,21 +40,28 @@ export const AllMember = () => {
 	const ALL_YEARS = [...SET_YEARS].sort((a, b) => b - a);
 
 	return (
-		<div className="max-w-7xl mx-auto px-8 w-full mt-10">
+		<div className="w-full mt-10">
 			<div className="mb-5 flex justify-end items-center relative">
 				<DropdownMenu>
 					<DropdownMenuTrigger className="flex h-11 w-[180px] items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:border-gray-300 hover:bg-gray-50 transition-all focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 data-[state=open]:border-green-500">
 						<span>{year}기</span>
 						<ChevronDown className="h-4 w-4 opacity-50" />
 					</DropdownMenuTrigger>
-					<DropdownMenuContent align="end" className="w-[180px] max-h-[300px] overflow-y-auto">
+					<DropdownMenuContent
+						align="end"
+						className="w-[180px] max-h-[300px] overflow-y-auto"
+					>
 						{ALL_YEARS.map(num => (
 							<DropdownMenuItem
 								key={num}
 								onClick={() => setFilter(num.toString())}
 								className="flex items-center justify-between"
 							>
-								<span className={year === num ? 'font-medium text-green-700' : ''}>{num}기</span>
+								<span
+									className={year === num ? 'font-medium text-green-700' : ''}
+								>
+									{num}기
+								</span>
 								{year === num && <Check className="h-4 w-4 text-green-600" />}
 							</DropdownMenuItem>
 						))}

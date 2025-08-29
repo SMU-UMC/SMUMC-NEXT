@@ -9,7 +9,7 @@ export const ActiveMember = () => {
 	);
 
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-20">
+		<div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-10">
 			{CURRENT_MEMBERS.map(member => {
 				return <MemberCard member={member} key={member.id} />;
 			})}
