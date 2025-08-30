@@ -231,6 +231,7 @@ const MEMBERS: Member[] = [
 		github: 'dydals3440',
 		sex: 'M',
 		project: null,
+		image: '/member_profiles/profile_김용민.webp',
 	},
 	{
 		id: 22,
@@ -1122,6 +1123,7 @@ const MEMBERS: Member[] = [
 		github: 'dydals3440',
 		sex: 'M',
 		project: null,
+		image: '/member_profiles/profile_김용민.webp',
 	},
 	{
 		id: 103,
@@ -1496,6 +1498,7 @@ const MEMBERS: Member[] = [
 		github: 'dydals3440',
 		sex: 'M',
 		project: null,
+		image: '/member_profiles/profile_김용민.webp',
 	},
 	{
 		id: 137,
@@ -1518,6 +1521,7 @@ const MEMBERS: Member[] = [
 		github: 'hijjoy',
 		sex: 'W',
 		project: null,
+		image: '/member_profiles/profile_정혜원.webp',
 	},
 	{
 		id: 139,
@@ -1947,6 +1951,7 @@ const MEMBERS: Member[] = [
 		github: 'dydals3440',
 		sex: 'M',
 		project: null,
+		image: '/member_profiles/profile_김용민.webp',
 	},
 	{
 		id: 178,
@@ -1958,6 +1963,7 @@ const MEMBERS: Member[] = [
 		github: 'hijjoy',
 		sex: 'W',
 		project: null,
+		image: '/member_profiles/profile_정혜원.webp',
 	},
 	{
 		id: 179,

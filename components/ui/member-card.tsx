@@ -41,9 +41,8 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 
 				<div className="absolute right-2 bottom-2 rounded-full overflow-hidden">
 					<Image
-						src="/images/mascot.webp"
-						alt="mascot"
-						priority
+						src={member.image || '/images/mascot.webp'}
+						alt={`${member.name} profile` || 'mascot'}
 						aria-hidden
 						width={150}
 						height={150}
