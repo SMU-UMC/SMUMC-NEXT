@@ -140,3 +140,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #1d8134;
 }
+
+.swiper-wrapper {
+  transition-timing-function: linear;
+}
