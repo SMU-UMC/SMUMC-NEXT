@@ -5,23 +5,29 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ReactNode } from 'react';
 import { HiOutlineFire } from 'react-icons/hi2';
+import { MobileNavbar } from './mobile-navbar';
 
 export const Navbar = () => {
 	return (
-		<header
-			className={cn(
-				'z-50 fixed top-0 flex items-center justify-between w-full p-10',
-			)}
-		>
-			<nav className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
-				<NavLink href="/">
-					<HiOutlineFire size={20} />
-				</NavLink>
-				<NavLink href="/projects">Projects</NavLink>
-				<NavLink href="/members">Members</NavLink>
-				<NavLink href="/notice">FAQ</NavLink>
-			</nav>
-		</header>
+		<>
+			{/* Desktop Navigation */}
+			<header
+				className={cn(
+					'z-50 fixed top-0 hidden sm:flex items-center justify-between w-full p-10',
+				)}
+			>
+				<nav className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
+					<NavLink href="/">
+						<HiOutlineFire size={20} />
+					</NavLink>
+					<NavLink href="/projects">Projects</NavLink>
+					<NavLink href="/members">Members</NavLink>
+					<NavLink href="/notice">FAQ</NavLink>
+				</nav>
+			</header>
+			{/* Mobile Navigation */}
+			<MobileNavbar />
+		</>
 	);
 };
 

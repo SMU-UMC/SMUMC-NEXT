@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 import { RiKakaoTalkFill } from 'react-icons/ri';
 import { SNS_LINKS } from '@/constants/sns';
 
-const COPYRIGHT_TEXT = '© SMUMC 2025.';
+export const COPYRIGHT_TEXT = '© SMUMC 2025.';
 
 export const Footer = () => {
 	const pathname = usePathname();
