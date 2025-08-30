@@ -1,20 +1,16 @@
-import { Hero } from './_components/hero';
-import { InfoBox } from './_components/info-box';
-import { PartInfo } from './_components/part-info';
-import { ProjectCarousel } from './_components/project-carousel';
-import { RecentIssue } from './_components/recent-issue';
+import { Hero } from '@/components/sections/home/hero';
+import { InfoBox } from '@/components/sections/home/info-box';
+import { PartInfo } from '@/components/sections/home/part-info';
+import { ProjectCarousel } from '@/components/sections/home/project-carousel';
 
 const HomePage = () => {
 	return (
-		<div className="min-h-full flex flex-col">
-			<div className="flex flex-col items-center justify-center md:justify-start text-center flex-1 px-6 pb-20">
-				<Hero />
-				<InfoBox />
-				<PartInfo />
-				<ProjectCarousel />
-				<RecentIssue />
-			</div>
-		</div>
+		<main className="flex flex-col items-center justify-center px-6 pb-50 gap-100 min-h-full">
+			<Hero />
+			<InfoBox />
+			<PartInfo />
+			<ProjectCarousel />
+		</main>
 	);
 };
 

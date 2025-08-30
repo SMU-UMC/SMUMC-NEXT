@@ -1,15 +1,17 @@
-import { Suspense } from 'react';
-import { MembersFilter } from './_components/members-filter';
+import { MembersFilter } from '@/components/sections/members/members-filter';
 
-const MembersPage = () => {
+interface MembersPageProps {
+	searchParams: Promise<{ all?: string }>;
+}
+
+const MembersPage = async ({ searchParams }: MembersPageProps) => {
+	const params = await searchParams;
+	const isAllTab = params.all === 'true';
+
 	return (
-		<div className="min-h-full flex flex-col">
-			<div className="flex flex-col items-center justify-center md:justify-start text-center flex-1 px-6 pb-20">
-				<Suspense fallback={<div>Loading...</div>}>
-					<MembersFilter />
-				</Suspense>
-			</div>
-		</div>
+		<main className="min-h-full flex flex-col justify-center items-center bg-green-50 py-36 sm:py-44">
+			<MembersFilter defaultTab={isAllTab ? 'member-list' : 'active-member'} />
+		</main>
 	);
 };
 

@@ -1,12 +1,10 @@
-import { QuestionAccordion } from './_components/question-accordion';
+import { QuestionAccordion } from '@/components/sections/notice/question-accordion';
 
 const NoticePage = () => {
 	return (
-		<div className="min-h-full flex flex-col">
-			<div className="flex flex-col items-center justify-center md:justify-start text-center flex-1 px-6 pb-20">
-				<QuestionAccordion />
-			</div>
-		</div>
+		<main className="min-h-full flex flex-col justify-center items-center py-40 sm:py-44">
+			<QuestionAccordion />
+		</main>
 	);
 };
 

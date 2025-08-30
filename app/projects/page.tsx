@@ -1,15 +1,17 @@
-import { Suspense } from 'react';
-import { FilterProjects } from './_components/filter-projects';
+import { FilterProjects } from '@/components/sections/projects/filter-projects';
 
-const ProjectPage = () => {
+interface ProjectPageProps {
+	searchParams: Promise<{ tag?: string }>;
+}
+
+const ProjectPage = async ({ searchParams }: ProjectPageProps) => {
+	const params = await searchParams;
+	const tag = params.tag || 'All';
+
 	return (
-		<div className="min-h-full flex flex-col">
-			<div className="flex flex-col items-center justify-center md:justify-start text-center flex-1 px-6 pb-20">
-				<Suspense fallback={<div>Loading...</div>}>
-					<FilterProjects />
-				</Suspense>
-			</div>
-		</div>
+		<main className="min-h-full flex flex-col py-40">
+			<FilterProjects defaultTag={tag} />
+		</main>
 	);
 };
 
