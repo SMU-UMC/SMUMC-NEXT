@@ -27,7 +27,7 @@ export const MobileNavbar = () => {
 			{/* Hamburger Button */}
 			<button
 				onClick={toggleMenu}
-				className="fixed top-6 right-6 z-[60] p-3 rounded-full bg-gray-900/40 backdrop-blur-md sm:hidden flex items-center justify-center"
+				className="fixed top-6 right-6 z-[60] p-3 rounded-full bg-gray-900/40 backdrop-blur-md sm:hidden flex items-center justify-center cursor-pointer"
 				aria-label="Toggle menu"
 			>
 				{isOpen ? (

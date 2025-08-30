@@ -31,21 +31,22 @@ const GradientButton = React.forwardRef<HTMLButtonElement, GradientButtonProps>(
 					className={cn(
 						'relative px-6 py-3 rounded-xl whitespace-nowrap cursor-pointer flex items-center justify-center gap-2',
 						'bg-gradient-to-r from-gray-700 to-gray-600 text-white font-medium',
-						'transition-all duration-500 hover:from-gray-800 hover:to-gray-700',
+						'transition-all duration-500',
+						'enabled:hover:from-gray-800 enabled:hover:to-gray-700',
+						'disabled:cursor-not-allowed disabled:opacity-50',
 						className,
 					)}
 					{...props}
 				>
-					{React.isValidElement(children) && 
+					{React.isValidElement(children) &&
 						React.cloneElement(children as React.ReactElement, {
 							children: (
 								<>
 									{gradientElement}
 									{(children as React.ReactElement).props.children}
 								</>
-							)
-						})
-					}
+							),
+						})}
 				</Slot>
 			);
 		}
@@ -56,7 +57,9 @@ const GradientButton = React.forwardRef<HTMLButtonElement, GradientButtonProps>(
 				className={cn(
 					'relative px-6 py-3 rounded-xl whitespace-nowrap cursor-pointer flex items-center justify-center gap-2',
 					'bg-gradient-to-r from-gray-700 to-gray-600 text-white font-medium',
-					'transition-all duration-500 hover:from-gray-800 hover:to-gray-700',
+					'transition-all duration-500',
+					'enabled:hover:from-gray-800 enabled:hover:to-gray-700',
+					'disabled:cursor-not-allowed',
 					className,
 				)}
 				{...props}
