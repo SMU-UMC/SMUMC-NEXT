@@ -16,7 +16,6 @@ export const QuestionAccordion = () => {
 				</p>
 			</header>
 
-			<div className="w-full text-zinc-600">
 				<SmoothAccordion type="single">
 					{QNA.map((q, idx) => (
 						<SmoothAccordionItem
@@ -30,7 +29,7 @@ export const QuestionAccordion = () => {
 						</SmoothAccordionItem>
 					))}
 				</SmoothAccordion>
-			</div>
+			
 		</section>
 	);
 };

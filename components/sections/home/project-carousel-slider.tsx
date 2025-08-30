@@ -37,7 +37,7 @@ export const ProjectCarouselSlider = ({
 			{[...projects, ...projects, ...projects].map((project, index) => (
 				<SwiperSlide
 					key={`${keyPrefix}-${index}`}
-					className="!w-[240px] swiper-slide"
+					className="!w-[160px] md:!w-[240px] swiper-slide"
 					dir={isRightDirection ? 'ltr' : undefined}
 				>
 					<ProjectSlideCard project={project} />

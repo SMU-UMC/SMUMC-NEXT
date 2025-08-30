@@ -5,7 +5,7 @@ import { ProjectCarousel } from '@/components/sections/home/project-carousel';
 
 const HomePage = () => {
 	return (
-		<main className="flex flex-col items-center justify-center px-6 pb-50 gap-100 min-h-full">
+		<main className="flex flex-col items-center justify-center px-6 pb-50 gap-100 min-h-full overflow-x-hidden">
 			<Hero />
 			<InfoBox />
 			<PartInfo />

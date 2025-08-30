@@ -13,7 +13,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 	const router = useRouter();
 
 	return (
-		<article className="flex flex-col gap-1 size-full max-w-xs">
+		<li className="flex flex-col gap-1 size-full max-w-xs">
 			<Image
 				src={project.img ? project.img : '/images/default_project.webp'}
 				alt={project.name}
@@ -82,6 +82,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 					))}
 				</div>
 			</div>
-		</article>
+		</li>
 	);
 };

@@ -14,7 +14,7 @@ interface AccordionItemProps {
 }
 
 export const SmoothAccordionItem = React.forwardRef<
-	HTMLDivElement,
+	HTMLLIElement,
 	AccordionItemProps
 >(({ title, children, isOpen = false, onToggle, className }, ref) => {
 	const [internalOpen, setInternalOpen] = React.useState(false);
@@ -29,7 +29,7 @@ export const SmoothAccordionItem = React.forwardRef<
 	};
 
 	return (
-		<div ref={ref} className={cn('border-b', className)}>
+		<li ref={ref} className={cn('border-b', className)}>
 			<button
 				onClick={handleToggle}
 				className="flex w-full items-center justify-between py-4 font-medium group text-left hover:cursor-pointer"
@@ -87,7 +87,7 @@ export const SmoothAccordionItem = React.forwardRef<
 					</motion.div>
 				)}
 			</AnimatePresence>
-		</div>
+		</li>
 	);
 });
 
@@ -119,7 +119,7 @@ export const SmoothAccordion: React.FC<SmoothAccordionProps> = ({
 	};
 
 	return (
-		<div className={className}>
+		<ul className={cn("w-full text-zinc-600", className)}>
 			{React.Children.map(children, (child, index) => {
 				if (React.isValidElement(child)) {
 					return React.cloneElement(child, {
@@ -129,6 +129,6 @@ export const SmoothAccordion: React.FC<SmoothAccordionProps> = ({
 				}
 				return child;
 			})}
-		</div>
+		</ul>
 	);
 };

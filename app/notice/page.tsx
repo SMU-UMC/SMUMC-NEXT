@@ -2,7 +2,7 @@ import { QuestionAccordion } from '@/components/sections/notice/question-accordi
 
 const NoticePage = () => {
 	return (
-		<main className="min-h-full flex flex-col justify-center items-center py-44">
+		<main className="min-h-full flex flex-col justify-center items-center py-40 sm:py-44">
 			<QuestionAccordion />
 		</main>
 	);

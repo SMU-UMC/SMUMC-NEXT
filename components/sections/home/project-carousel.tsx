@@ -25,24 +25,26 @@ export const ProjectCarousel = () => {
 					duration: 2,
 					y: { duration: 1 },
 				}}
-				className="w-full py-16 space-y-4 flex flex-col items-center justify-center relative"
+				className="w-full py-16 space-y-0 sm:space-y-4 flex flex-col items-center justify-center relative"
 			>
 				<ProjectCarouselHeader />
-				<ProjectCarouselBackground />
 
-				<div className="w-full flex flex-col items-center justify-center gap-4 md:w-[80%] w-[90%]">
-					<ProjectCarouselSlider
-						swiper-wrapper
-						projects={firstRow}
-						direction="left"
-						keyPrefix="first"
-					/>
-					<ProjectCarouselSlider
-						swiper-wrapper
-						projects={secondRow}
-						direction="right"
-						keyPrefix="second"
-					/>
+				<div className="relative w-full">
+					<ProjectCarouselBackground />
+					<div className="w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center gap-4 relative z-10">
+						<ProjectCarouselSlider
+							swiper-wrapper
+							projects={firstRow}
+							direction="left"
+							keyPrefix="first"
+						/>
+						<ProjectCarouselSlider
+							swiper-wrapper
+							projects={secondRow}
+							direction="right"
+							keyPrefix="second"
+						/>
+					</div>
 				</div>
 			</motion.div>
 		</section>
