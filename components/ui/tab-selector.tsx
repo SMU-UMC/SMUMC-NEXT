@@ -90,7 +90,7 @@ export const TabSelector = ({
 												'absolute inset-0 rounded-full shadow-lg',
 												activeColor,
 											)}
-											initial={false}
+											initial={{ opacity: 1, scale: 1 }} 
 											transition={{
 												type: 'spring',
 												stiffness: 400,
