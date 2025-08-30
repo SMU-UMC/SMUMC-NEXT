@@ -17,12 +17,12 @@ export const MembersFilter = () => {
 	const tabItems = [
 		{
 			id: 'active-member',
-			label: 'Active Member',
+			label: 'Active',
 			content: <ActiveMember />,
 		},
 		{
 			id: 'member-list',
-			label: 'Member List',
+			label: 'All',
 			content: <AllMember />,
 		},
 	];
@@ -37,7 +37,7 @@ export const MembersFilter = () => {
 					<h1 className="font-extrabold text-zinc-700 text-4xl sm:text-5xl text-center break-keep">
 						SMUMC와 함께 성장한 챌린저들
 					</h1>
-					<p className="text-zinc-500 text-md font-semibold">
+					<p className="text-zinc-500 text-md font-semibold text-center break-keep">
 						열정으로 하나 된 우리 상명대 챌린저들을 만나보세요.
 					</p>
 				</div>
@@ -49,6 +49,7 @@ export const MembersFilter = () => {
 					defaultActiveId={activeTab}
 					contentClassName="bg-transparent border-0 p-0"
 					tabContainerClassName="border border-zinc-200/60 bg-zinc-50/50"
+					useMobileTab={false}
 				/>
 			</div>
 		</section>

@@ -17,7 +17,9 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 					</span>
 
 					<div className="flex items-center gap-2">
-						<h3 className="font-bold text-zinc-900 text-2xl">{member.name}</h3>
+						<h3 className="font-bold text-zinc-900 text-xl sm:text-2xl">
+							{member.name}
+						</h3>
 						{member.github && (
 							<Link
 								href={`https://github.com/${member.github}`}
@@ -32,7 +34,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 						)}
 					</div>
 
-					<p className="text-zinc-500 text-sm">
+					<p className="text-zinc-500 text-xs sm:text-sm">
 						{member.year}기 {member.part}
 					</p>
 				</div>

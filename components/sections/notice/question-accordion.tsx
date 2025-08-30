@@ -11,7 +11,7 @@ export const QuestionAccordion = () => {
 				<h1 className="text-green-700 font-extrabold text-7xl sm:text-9xl tracking-wider leading-[1.2]">
 					FAQ
 				</h1>
-				<p className="text-zinc-500 text-md sm:text-lg font-semibold break-keep">
+				<p className="text-zinc-500 text-md sm:text-lg font-semibold break-keep text-center">
 					UMC에 대해 자주 궁금해하시는 질문들을 모아봤어요
 				</p>
 			</header>

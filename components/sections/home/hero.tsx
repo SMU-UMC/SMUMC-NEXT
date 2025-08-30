@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const Hero = () => {
 	return (
-		<section className="flex flex-col justify-center items-center gap-1 mt-50">
+		<section className="flex flex-col justify-center items-center gap-1 mt-30 sm:mt-50">
 			<Image
 				priority
 				src="/images/logo.webp"
@@ -14,7 +14,7 @@ export const Hero = () => {
 				alt="Logo"
 				className="object-contain aspect-[1.5/1]"
 			/>
-			<p className="text-zinc-300 text-md animate-float opacity-80 mb-4">
+			<p className="text-zinc-300 text-md animate-float opacity-80 mb-4 text-center px-10">
 				앱&웹 서비스 런칭에 도전하는 대학생 IT 연합동아리
 			</p>
 			<GradientButton asChild>

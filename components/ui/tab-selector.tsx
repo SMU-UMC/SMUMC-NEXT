@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 import { motion, LayoutGroup } from 'framer-motion';
 import { ReactNode, useState, useEffect } from 'react';
+import { MobileTabSelector } from './mobile-tab-selector';
 
 interface TabItem {
 	id: string | number;
@@ -19,6 +20,7 @@ interface TabSelectorProps {
 	defaultActiveId?: string | number;
 	tabContainerClassName?: string;
 	onTabChange?: (id: string | number) => void;
+	useMobileTab?: boolean;
 }
 
 export const TabSelector = ({
@@ -30,6 +32,7 @@ export const TabSelector = ({
 	contentClassName,
 	tabContainerClassName,
 	onTabChange,
+	useMobileTab = true,
 }: TabSelectorProps) => {
 	const [activeId, setActiveId] = useState<string | number>(
 		defaultActiveId || items[0]?.id || 0,
@@ -49,9 +52,20 @@ export const TabSelector = ({
 
 	return (
 		<div className={cn('w-full', className)}>
+			{/* Mobile Tabs - only render if useMobileTab is true */}
+			{useMobileTab && (
+				<MobileTabSelector 
+					items={items}
+					activeId={activeId}
+					onTabClick={handleTabClick}
+				/>
+			)}
+
+			{/* Desktop/Regular Tab Bar */}
 			<div
 				className={cn(
 					'relative bg-gray-50/5 rounded-full p-1 mb-6 max-w-fit mx-auto',
+					useMobileTab && 'hidden lg:block',
 					tabContainerClassName,
 				)}
 			>
@@ -86,7 +100,7 @@ export const TabSelector = ({
 								)}
 								<span
 									className={cn(
-										'relative z-10 transition-colors font-semibold text-zinc-600 cursor-pointer',
+										'relative z-10 transition-colors font-semibold text-zinc-600 cursor-pointer text-sm sm:text-base',
 										activeId === item.id && 'text-white',
 									)}
 								>
