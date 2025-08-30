@@ -9,7 +9,7 @@ export const PartInfo = () => {
 		id: part.id,
 		label: part.part,
 		content: (
-			<p className="text-sm sm:text-md font-normal text-zinc-200 text-center max-w-2xl">
+			<p className="text-sm sm:text-base  font-medium text-zinc-200 text-center max-w-2xl">
 				{part.description}
 			</p>
 		),
