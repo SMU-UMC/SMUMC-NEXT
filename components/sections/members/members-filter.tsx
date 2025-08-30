@@ -1,18 +1,15 @@
 'use client';
 
 import { TabSelector } from '@/components/ui/tab-selector';
-import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
 
 import { ActiveMember } from './active-member';
 import { AllMember } from './all-member';
 
-export const MembersFilter = () => {
-	const searchParams = useSearchParams();
-	const all = searchParams.get('all');
-	const [activeTab, _setActiveTab] = useState(
-		all ? 'member-list' : 'active-member',
-	);
+interface MembersFilterProps {
+	defaultTab?: string;
+}
+
+export const MembersFilter = ({ defaultTab = 'active-member' }: MembersFilterProps) => {
 
 	const tabItems = [
 		{
@@ -46,7 +43,7 @@ export const MembersFilter = () => {
 			<div className="w-full max-w-4xl">
 				<TabSelector
 					items={tabItems}
-					defaultActiveId={activeTab}
+					defaultActiveId={defaultTab}
 					contentClassName="bg-transparent border-0 p-0"
 					tabContainerClassName="border border-zinc-200/60 bg-zinc-50/50"
 					useMobileTab={false}

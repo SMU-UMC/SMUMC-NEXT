@@ -2,14 +2,16 @@
 
 import { PROJECTS, PROJECTS_YEAR } from '@/constants/projects';
 import { TabSelector } from '@/components/ui/tab-selector';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useMemo } from 'react';
 import { ProjectCard } from './project-card';
 
-export const FilterProjects = () => {
+interface FilterProjectsProps {
+	defaultTag?: string;
+}
+
+export const FilterProjects = ({ defaultTag = 'All' }: FilterProjectsProps) => {
 	const router = useRouter();
-	const searchParams = useSearchParams();
-	const tag = searchParams.get('tag') || 'All';
 
 	const setFilter = (tag: string | number) => {
 		if (tag && tag !== 'All') {
@@ -51,7 +53,7 @@ export const FilterProjects = () => {
 			<div className="w-full max-w-8xl px-4 mt-2 lg:mt-16">
 				<TabSelector
 					items={tabItems}
-					defaultActiveId={tag}
+					defaultActiveId={defaultTag}
 					activeColor="bg-green-700/50"
 					contentClassName="bg-transparent border-0 p-0 min-h-0"
 					tabContainerClassName="bg-zinc-800/50"

@@ -13,15 +13,17 @@ import {
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
+const LAST_YEAR = 8;
+
 export const AllMember = () => {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const yearParam = searchParams.get('year');
-	const year = parseInt(yearParam || '6', 10);
+	const year = parseInt(yearParam || LAST_YEAR.toString(), 10);
 
 	useEffect(() => {
 		if (!yearParam) {
-			router.push(`/members?all=true&year=6`);
+			router.push(`/members?all=true&year=${LAST_YEAR}`);
 		}
 	}, [yearParam, router]);
 
