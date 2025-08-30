@@ -46,7 +46,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 						aria-hidden
 						width={150}
 						height={150}
-						className="object-contain p-4"
+						className="object-contain p-4 h-[150px]"
 					/>
 				</div>
 			</div>
