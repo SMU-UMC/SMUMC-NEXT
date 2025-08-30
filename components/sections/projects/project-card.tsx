@@ -23,13 +23,13 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 			/>
 
 			<div className="flex flex-col items-start p-3 w-full gap-1 flex-1">
-				<header className="flex justify-between items-center w-full">
+				<div className="flex justify-between items-center w-full">
 					<div className="flex gap-2 justify-center items-center">
 						<h3 className="text-lg font-extrabold">{project.name}</h3>
 						<p className="text-green-500 font-semibold">{project.year}기</p>
 					</div>
 
-					<nav className="flex gap-2" aria-label="프로젝트 링크">
+					<div className="flex gap-2">
 						{project.github && (
 							<Link
 								href={project.github}
@@ -56,8 +56,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 								/>
 							</Link>
 						)}
-					</nav>
-				</header>
+					</div>
+				</div>
 
 				<p className="font-semibold w-full text-sm truncate flex flex-start">
 					{project.description}

@@ -16,7 +16,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 						{member.position}
 					</span>
 
-					<header className="flex items-center gap-2">
+					<div className="flex items-center gap-2">
 						<h3 className="font-bold text-zinc-900 text-2xl">{member.name}</h3>
 						{member.github && (
 							<Link
@@ -30,7 +30,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 								/>
 							</Link>
 						)}
-					</header>
+					</div>
 
 					<p className="text-zinc-500 text-sm">
 						{member.year}기 {member.part}

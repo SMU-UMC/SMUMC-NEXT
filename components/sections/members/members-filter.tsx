@@ -28,11 +28,11 @@ export const MembersFilter = () => {
 	];
 
 	return (
-		<div className="flex flex-col items-center justify-center gap-20 mt-20 w-[90%] md:w-[80%]">
+		<section className="flex flex-col items-center justify-center gap-20 mt-20 w-[90%] md:w-[80%]">
 			<div className="relative w-full">
-				<h1 className="absolute inset-0 flex items-center justify-center text-5xl sm:text-6xl md:text-8xl font-black text-center tracking-wide text-zinc-600/15 animate-float select-none pointer-events-none -mt-30">
+				<span className="absolute inset-0 flex items-center justify-center text-5xl sm:text-6xl md:text-8xl font-black text-center tracking-wide text-zinc-600/15 animate-float select-none pointer-events-none -mt-30">
 					Break The Rules
-				</h1>
+				</span>
 				<div className="flex flex-col items-center justify-center gap-4">
 					<h1 className="font-extrabold text-zinc-700 text-4xl sm:text-5xl text-center break-keep">
 						SMUMC와 함께 성장한 챌린저들
@@ -51,6 +51,6 @@ export const MembersFilter = () => {
 					tabContainerClassName="border border-zinc-200/60 bg-zinc-50/50"
 				/>
 			</div>
-		</div>
+		</section>
 	);
 };

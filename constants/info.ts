@@ -1,19 +1,9 @@
-const CONTECT_INFOS = [
-	{ data: 'dydals3440@gmail.com', description: 'email' },
-	{
-		data: 'Develop By 차다인 김용민 박지환 김지영 정혜원',
-		description: '개발자',
-	},
-	{
-		data: 'https://open.kakao.com/o/s0svOsWf',
-		description: '오픈채팅',
-	},
-
-	{
-		data: 'https://www.instagram.com/smu_makeus_challenge/',
-		description: '인스타그램',
-	},
-	{ data: null, description: '구글폼' },
+const UMC_ACTIVITIES = [
+	'스터디',
+	'해커톤',
+	'미니 프로젝트',
+	'데모데이',
+	'파트별 컨퍼런스',
 ];
 
 const QNA = [
@@ -54,4 +44,4 @@ const QNA = [
 	},
 ];
 
-export { CONTECT_INFOS, QNA };
+export { QNA, UMC_ACTIVITIES };

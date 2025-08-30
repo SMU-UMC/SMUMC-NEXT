@@ -3,13 +3,16 @@
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { FaInstagram } from 'react-icons/fa';
-import { RxNotionLogo } from 'react-icons/rx';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { RiKakaoTalkFill } from 'react-icons/ri';
+import { SNS_LINKS } from '@/constants/sns';
+
+const COPYRIGHT_TEXT = '© SMUMC 2025.';
 
 export const Footer = () => {
 	const pathname = usePathname();
+
 	const isNoticePage = pathname === '/notice';
 	const isMemberPage = pathname === '/members';
 
@@ -27,19 +30,16 @@ export const Footer = () => {
 					(isNoticePage || isMemberPage) && 'text-zinc-600',
 				)}
 			>
-				© SMUMC 2025.
+				{COPYRIGHT_TEXT}
 			</p>
 			<nav className="flex items-center gap-x-2" aria-label="소셜 미디어 링크">
 				<SnsLink
-					href={'https://www.instagram.com/smu_makeus_challenge/'}
+					href={SNS_LINKS.instagram}
 					isLight={isNoticePage || isMemberPage}
 				>
 					<FaInstagram />
 				</SnsLink>
-				<SnsLink
-					href={'https://open.kakao.com/o/s0RE3nIh'}
-					isLight={isNoticePage || isMemberPage}
-				>
+				<SnsLink href={SNS_LINKS.kakao} isLight={isNoticePage || isMemberPage}>
 					<RiKakaoTalkFill />
 				</SnsLink>
 			</nav>
@@ -61,10 +61,9 @@ const SnsLink = ({
 			href={href}
 			target="_blank"
 			className={cn(
-				'rounded-full p-2 transition-all duration-300',
-				isLight
-					? 'bg-transparent text-zinc-600 hover:text-zinc-800 hover:bg-zinc-200'
-					: 'bg-zinc-800 text-zinc-400 hover:text-zinc-200',
+				'rounded-full p-2 transition-all duration-300 bg-zinc-800 text-zinc-400 hover:text-zinc-200',
+				isLight &&
+					'bg-transparent text-zinc-600 hover:text-zinc-800 hover:bg-zinc-200',
 			)}
 		>
 			{children}

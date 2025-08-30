@@ -33,7 +33,7 @@ export const PartInfo = () => {
 					열정과 끈기
 					<span className="absolute bottom-0 left-0 right-0 h-[50%] bg-yellow-400/40 -z-10" />
 				</strong>
-				로 성장할 챌린저들과 <br /> “실제로 동작하는 서비스를 만들어보자!”라는
+				로 성장할 챌린저들과 <br /> "실제로 동작하는 서비스를 만들어보자!"라는
 				목표를 향해 달립니다
 			</h1>
 
