@@ -26,7 +26,7 @@ export const ProjectCarouselSlider = ({
 			loopAdditionalSlides={1}
 			spaceBetween={8}
 			centeredSlides
-			slidesPerView={4}
+			slidesPerView="auto"
 			speed={10000}
 			freeMode={true}
 			allowTouchMove={true}
