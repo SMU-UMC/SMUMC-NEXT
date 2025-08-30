@@ -1,9 +1,9 @@
-import { Project } from '@/types';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { FaGithub } from 'react-icons/fa';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { FaGithub } from "react-icons/fa";
+import type { Project } from "@/types";
 
 export interface ProjectCardProps {
 	project: Project;
@@ -15,7 +15,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 	return (
 		<li className="flex flex-col gap-1 size-full max-w-xs">
 			<Image
-				src={project.img ? project.img : '/images/default_project.webp'}
+				src={project.img ? project.img : "/images/default_project.webp"}
 				alt={project.name}
 				width={400}
 				height={200}

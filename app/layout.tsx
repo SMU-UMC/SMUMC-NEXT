@@ -1,26 +1,32 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { Footer } from '@/components/layout/footer';
-import { Navbar } from '@/components/layout/navbar';
-import { cn } from '@/lib/utils';
-import React from 'react';
+import type { Metadata } from "next";
+import "./globals.css";
+import type React from "react";
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-	title: 'SMUMC',
-	description: 'FUNNY CODING SMUMC',
+	metadataBase: new URL("https://www.smumc.co.kr/"),
+	title: "SMUMC",
+	description: "FUNNY CODING SMUMC",
 	icons: {
-		icon: '/logo.png',
+		icon: "/logo.png",
 	},
 	openGraph: {
-		title: 'SMUMC 사이트에 오신 것을 환영합니다!',
-		description: 'YAHO SMUMC CODING',
-		siteName: 'SMUMC',
-		locale: 'ko_KR',
-		type: 'website',
-		url: 'https://www.smumc.co.kr/',
-		images: {
-			url: '/logo.svg',
-		},
+		title: "SMUMC",
+		description: "YAHO SMUMC CODING",
+		siteName: "SMUMC",
+		locale: "ko_KR",
+		type: "website",
+		url: "https://www.smumc.co.kr/",
+		images: [
+			{
+				url: "/images/openGraph.png",
+				width: 1200,
+				height: 638,
+				alt: "SMUMC 대표 이미지",
+			},
+		],
 	},
 };
 

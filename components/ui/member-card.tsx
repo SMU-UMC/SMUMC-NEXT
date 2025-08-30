@@ -1,7 +1,7 @@
-import { Member } from '@/types';
-import { SiGithub } from 'react-icons/si';
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
+import { SiGithub } from "react-icons/si";
+import type { Member } from "@/types";
 
 interface MemberCardProps {
 	member: Member;
@@ -41,8 +41,8 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 
 				<div className="absolute right-2 bottom-2 rounded-full overflow-hidden">
 					<Image
-						src={member.image || '/images/mascot.webp'}
-						alt={`${member.name} profile` || 'mascot'}
+						src={member.image || "/images/mascot.webp"}
+						alt={`${member.name} profile` || "mascot"}
 						aria-hidden
 						width={150}
 						height={150}

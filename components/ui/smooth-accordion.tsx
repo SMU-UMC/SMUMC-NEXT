@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/lib/utils';
-import { FiPlus, FiMinus } from 'react-icons/fi';
+import { AnimatePresence, motion } from "framer-motion";
+import * as React from "react";
+import { FiMinus, FiPlus } from "react-icons/fi";
+import { cn } from "@/lib/utils";
 
 interface AccordionItemProps {
 	title: string;
@@ -29,7 +29,7 @@ export const SmoothAccordionItem = React.forwardRef<
 	};
 
 	return (
-		<li ref={ref} className={cn('border-b', className)}>
+		<li ref={ref} className={cn("border-b", className)}>
 			<button
 				onClick={handleToggle}
 				className="flex w-full items-center justify-between py-4 font-medium group text-left hover:cursor-pointer"
@@ -43,7 +43,7 @@ export const SmoothAccordionItem = React.forwardRef<
 							rotate: actuallyOpen ? 90 : 0,
 							opacity: actuallyOpen ? 0 : 1,
 						}}
-						transition={{ duration: 0.3, ease: 'easeInOut' }}
+						transition={{ duration: 0.3, ease: "easeInOut" }}
 						className="absolute inset-0 flex items-center justify-center text-lg"
 					>
 						<FiPlus size={20} />
@@ -53,7 +53,7 @@ export const SmoothAccordionItem = React.forwardRef<
 							rotate: actuallyOpen ? 0 : 90,
 							opacity: actuallyOpen ? 1 : 0,
 						}}
-						transition={{ duration: 0.3, ease: 'easeInOut' }}
+						transition={{ duration: 0.3, ease: "easeInOut" }}
 						className="absolute inset-0 flex items-center justify-center text-lg"
 					>
 						<FiMinus size={20} />
@@ -66,10 +66,10 @@ export const SmoothAccordionItem = React.forwardRef<
 					<motion.div
 						initial={{ height: 0, opacity: 0 }}
 						animate={{
-							height: 'auto',
+							height: "auto",
 							opacity: 1,
 							transition: {
-								height: { duration: 0.3, ease: 'easeOut' },
+								height: { duration: 0.3, ease: "easeOut" },
 								opacity: { duration: 0.2, delay: 0.1 },
 							},
 						}}
@@ -77,7 +77,7 @@ export const SmoothAccordionItem = React.forwardRef<
 							height: 0,
 							opacity: 0,
 							transition: {
-								height: { duration: 0.3, ease: 'easeIn' },
+								height: { duration: 0.3, ease: "easeIn" },
 								opacity: { duration: 0.2 },
 							},
 						}}
@@ -91,28 +91,28 @@ export const SmoothAccordionItem = React.forwardRef<
 	);
 });
 
-SmoothAccordionItem.displayName = 'SmoothAccordionItem';
+SmoothAccordionItem.displayName = "SmoothAccordionItem";
 
 interface SmoothAccordionProps {
 	children: React.ReactNode;
-	type?: 'single' | 'multiple';
+	type?: "single" | "multiple";
 	className?: string;
 }
 
 export const SmoothAccordion: React.FC<SmoothAccordionProps> = ({
 	children,
-	type = 'single',
+	type = "single",
 	className,
 }) => {
 	const [openItems, setOpenItems] = React.useState<number[]>([]);
 
 	const handleToggle = (index: number) => {
-		if (type === 'single') {
+		if (type === "single") {
 			setOpenItems(openItems.includes(index) ? [] : [index]);
 		} else {
 			setOpenItems(
 				openItems.includes(index)
-					? openItems.filter(i => i !== index)
+					? openItems.filter((i) => i !== index)
 					: [...openItems, index],
 			);
 		}

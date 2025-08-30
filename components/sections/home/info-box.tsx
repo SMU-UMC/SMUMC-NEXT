@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { ActivityBadge } from '@/components/ui/activity-badge';
-import { InfoBoxTitle } from './info-box-title';
-import { StatsContainer } from './stats-container';
-import { motion } from 'framer-motion';
-import { UMC_ACTIVITIES } from '@/constants/info';
+import { motion } from "framer-motion";
+import { ActivityBadge } from "@/components/ui/activity-badge";
+import { UMC_ACTIVITIES } from "@/constants/info";
+import { InfoBoxTitle } from "./info-box-title";
+import { StatsContainer } from "./stats-container";
 
 const listVariants = {
 	hidden: {
@@ -38,7 +38,7 @@ export const InfoBox = () => {
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: false }}
 			transition={{
-				ease: 'easeInOut',
+				ease: "easeInOut",
 				duration: 2,
 				y: { duration: 1 },
 			}}
@@ -57,7 +57,7 @@ export const InfoBox = () => {
 					<motion.li
 						key={idx}
 						variants={itemVariants}
-						transition={{ type: 'spring' }}
+						transition={{ type: "spring" }}
 					>
 						<ActivityBadge text={activity} />
 					</motion.li>

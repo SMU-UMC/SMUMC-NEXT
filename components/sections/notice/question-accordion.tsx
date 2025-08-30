@@ -1,8 +1,8 @@
 import {
 	SmoothAccordion,
 	SmoothAccordionItem,
-} from '@/components/ui/smooth-accordion';
-import { QNA } from '@/constants/info';
+} from "@/components/ui/smooth-accordion";
+import { QNA } from "@/constants/info";
 
 export const QuestionAccordion = () => {
 	return (
@@ -16,20 +16,19 @@ export const QuestionAccordion = () => {
 				</p>
 			</header>
 
-				<SmoothAccordion type="single">
-					{QNA.map((q, idx) => (
-						<SmoothAccordionItem
-							key={idx}
-							title={q.question}
-							className="border-b-2 border-zinc-200 last:border-none"
-						>
-							<p className="text-left text-md text-zinc-500 font-semibold leading-relaxed">
-								{q.answer}
-							</p>
-						</SmoothAccordionItem>
-					))}
-				</SmoothAccordion>
-			
+			<SmoothAccordion type="single">
+				{QNA.map((q, idx) => (
+					<SmoothAccordionItem
+						key={idx}
+						title={q.question}
+						className="border-b-2 border-zinc-200 last:border-none"
+					>
+						<p className="text-left text-md text-zinc-500 font-semibold leading-relaxed">
+							{q.answer}
+						</p>
+					</SmoothAccordionItem>
+				))}
+			</SmoothAccordion>
 		</section>
 	);
 };

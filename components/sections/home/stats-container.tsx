@@ -1,4 +1,4 @@
-import { CounterCard } from '@/components/ui/counter-card';
+import { CounterCard } from "@/components/ui/counter-card";
 
 export const StatsContainer = () => {
 	return (
@@ -9,11 +9,7 @@ export const StatsContainer = () => {
 				lastUnit="명"
 			/>
 			<CounterCard title="현재가 말해주는 '열정'" endNum={41} lastUnit="명" />
-			<CounterCard
-				title="기수가 증명하는 '지속성'"
-				endNum={9}
-				lastUnit="기"
-			/>
+			<CounterCard title="기수가 증명하는 '지속성'" endNum={9} lastUnit="기" />
 		</div>
 	);
 };

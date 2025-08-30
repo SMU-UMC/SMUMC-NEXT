@@ -1,24 +1,23 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { MEMBERS } from '@/constants/members';
-import { MemberCard } from '@/components/ui/member-card';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { ChevronDown, Check } from 'lucide-react';
-
+import { Check, ChevronDown } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from "@/components/ui/dropdown-menu";
+import { MemberCard } from "@/components/ui/member-card";
+import { MEMBERS } from "@/constants/members";
 
 const LAST_YEAR = 8;
 
 export const AllMember = () => {
 	const router = useRouter();
 	const searchParams = useSearchParams();
-	const yearParam = searchParams.get('year');
+	const yearParam = searchParams.get("year");
 	const year = parseInt(yearParam || LAST_YEAR.toString(), 10);
 
 	useEffect(() => {
@@ -32,13 +31,13 @@ export const AllMember = () => {
 		if (!isNaN(parsedYear)) {
 			router.replace(`/members?all=true&year=${parsedYear}`, { scroll: false });
 		} else {
-			router.replace('/members?all=true', { scroll: false });
+			router.replace("/members?all=true", { scroll: false });
 		}
 	};
 
-	const CURRENT_MEMBERS = MEMBERS.filter(member => member.year === year);
+	const CURRENT_MEMBERS = MEMBERS.filter((member) => member.year === year);
 
-	const SET_YEARS = new Set(MEMBERS.map(member => member.year));
+	const SET_YEARS = new Set(MEMBERS.map((member) => member.year));
 	const ALL_YEARS = [...SET_YEARS].sort((a, b) => b - a);
 
 	return (
@@ -53,14 +52,14 @@ export const AllMember = () => {
 						align="end"
 						className="w-[180px] max-h-[300px] overflow-y-auto"
 					>
-						{ALL_YEARS.map(num => (
+						{ALL_YEARS.map((num) => (
 							<DropdownMenuItem
 								key={num}
 								onClick={() => setFilter(num.toString())}
 								className="flex items-center justify-between"
 							>
 								<span
-									className={year === num ? 'font-medium text-green-700' : ''}
+									className={year === num ? "font-medium text-green-700" : ""}
 								>
 									{num}기
 								</span>
@@ -71,7 +70,7 @@ export const AllMember = () => {
 				</DropdownMenu>
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-				{CURRENT_MEMBERS.map(member => (
+				{CURRENT_MEMBERS.map((member) => (
 					<MemberCard key={member.id} member={member} />
 				))}
 			</div>

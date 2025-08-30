@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { PART } from '@/constants/part';
-import { TabSelector } from '@/components/ui/tab-selector';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import { TabSelector } from "@/components/ui/tab-selector";
+import { PART } from "@/constants/part";
 
 export const PartInfo = () => {
-	const tabItems = PART.map(part => ({
+	const tabItems = PART.map((part) => ({
 		id: part.id,
 		label: part.part,
 		content: (
@@ -21,14 +21,14 @@ export const PartInfo = () => {
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: false }}
 			transition={{
-				ease: 'easeInOut',
+				ease: "easeInOut",
 				duration: 2,
 				y: { duration: 1 },
 			}}
 			className="flex flex-col gap-10 justify-center items-center"
 		>
 			<h1 className="text-center text-xl sm:text-2xl md:text-3xl font-bold leading-normal break-keep">
-				6개월 간의{' '}
+				6개월 간의{" "}
 				<strong className="font-black relative">
 					열정과 끈기
 					<span className="absolute bottom-0 left-0 right-0 h-[50%] bg-yellow-400/40 -z-10" />

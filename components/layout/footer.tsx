@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
-import React, { ReactNode } from 'react';
-import Link from 'next/link';
-import { FaInstagram } from 'react-icons/fa';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { RiKakaoTalkFill } from 'react-icons/ri';
-import { SNS_LINKS } from '@/constants/sns';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { type ReactNode } from "react";
+import { FaInstagram } from "react-icons/fa";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import { SNS_LINKS } from "@/constants/sns";
+import { cn } from "@/lib/utils";
 
-export const COPYRIGHT_TEXT = '© SMUMC 2025.';
+export const COPYRIGHT_TEXT = "© SMUMC 2025.";
 
 export const Footer = () => {
 	const pathname = usePathname();
 
-	const isNoticePage = pathname === '/notice';
-	const isMemberPage = pathname === '/members';
+	const isNoticePage = pathname === "/notice";
+	const isMemberPage = pathname === "/members";
 
 	return (
 		<footer
 			className={cn(
-				'flex items-center justify-between w-full py-6 px-10 z-50',
-				isNoticePage && 'bg-zinc-50',
-				isMemberPage && 'bg-green-50',
+				"flex items-center justify-between w-full py-6 px-10 z-50",
+				isNoticePage && "bg-zinc-50",
+				isMemberPage && "bg-green-50",
 			)}
 		>
 			<p
 				className={cn(
-					'text-sm text-zinc-300',
-					(isNoticePage || isMemberPage) && 'text-zinc-600',
+					"text-sm text-zinc-300",
+					(isNoticePage || isMemberPage) && "text-zinc-600",
 				)}
 			>
 				{COPYRIGHT_TEXT}
@@ -61,9 +61,9 @@ const SnsLink = ({
 			href={href}
 			target="_blank"
 			className={cn(
-				'rounded-full p-2 transition-all duration-300 bg-zinc-800 text-zinc-400 hover:text-zinc-200',
+				"rounded-full p-2 transition-all duration-300 bg-zinc-800 text-zinc-400 hover:text-zinc-200",
 				isLight &&
-					'bg-transparent text-zinc-600 hover:text-zinc-800 hover:bg-zinc-200',
+					"bg-transparent text-zinc-600 hover:text-zinc-800 hover:bg-zinc-200",
 			)}
 		>
 			{children}

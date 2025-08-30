@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
-import { motion, LayoutGroup } from 'framer-motion';
-import { ReactNode, useState, useEffect } from 'react';
-import { MobileTabSelector } from './mobile-tab-selector';
+import { LayoutGroup, motion } from "framer-motion";
+import { type ReactNode, useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import { MobileTabSelector } from "./mobile-tab-selector";
 
 interface TabItem {
 	id: string | number;
@@ -27,7 +27,7 @@ export const TabSelector = ({
 	items,
 	className,
 	tabClassName,
-	activeColor = 'bg-zinc-600',
+	activeColor = "bg-zinc-600",
 	defaultActiveId,
 	contentClassName,
 	tabContainerClassName,
@@ -40,7 +40,9 @@ export const TabSelector = ({
 	const [isClient, setIsClient] = useState(false);
 
 	useEffect(() => {
-		setIsClient(true);
+		requestAnimationFrame(() => {
+			setIsClient(true);
+		});
 	}, []);
 
 	const handleTabClick = (id: string | number) => {
@@ -48,10 +50,10 @@ export const TabSelector = ({
 		onTabChange?.(id);
 	};
 
-	const activeItem = items.find(item => item.id === activeId);
+	const activeItem = items.find((item) => item.id === activeId);
 
 	return (
-		<div className={cn('w-full', className)}>
+		<div className={cn("w-full", className)}>
 			{/* Mobile Tabs - only render if useMobileTab is true */}
 			{useMobileTab && (
 				<MobileTabSelector
@@ -64,35 +66,35 @@ export const TabSelector = ({
 			{/* Desktop/Regular Tab Bar */}
 			<nav
 				className={cn(
-					'relative bg-gray-50/5 rounded-full p-1 mb-6 max-w-fit mx-auto',
-					useMobileTab && 'hidden lg:block',
+					"relative bg-gray-50/5 rounded-full p-1 mb-6 max-w-fit mx-auto",
+					useMobileTab && "hidden lg:block",
 					tabContainerClassName,
 				)}
 			>
 				<LayoutGroup>
 					<ul className="flex gap-1">
-						{items.map(item => (
+						{items.map((item) => (
 							<li key={item.id}>
 								<motion.button
 									onClick={() => handleTabClick(item.id)}
 									className={cn(
-										'relative px-8 py-3 rounded-full font-medium transition-colors',
+										"relative px-8 py-3 rounded-full font-medium transition-colors",
 										tabClassName,
 									)}
 									whileHover={{ scale: 1.02 }}
 									whileTap={{ scale: 0.98 }}
-									transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+									transition={{ type: "spring", stiffness: 400, damping: 25 }}
 								>
 									{activeId === item.id && isClient && (
 										<motion.div
 											layoutId="activeTab"
 											className={cn(
-												'absolute inset-0 rounded-full shadow-lg',
+												"absolute inset-0 rounded-full shadow-lg",
 												activeColor,
 											)}
-											initial={{ opacity: 1, scale: 1 }} 
+											initial={false}
 											transition={{
-												type: 'spring',
+												type: "spring",
 												stiffness: 400,
 												damping: 30,
 											}}
@@ -100,8 +102,8 @@ export const TabSelector = ({
 									)}
 									<span
 										className={cn(
-											'relative z-10 transition-colors font-semibold text-zinc-600 cursor-pointer text-sm sm:text-base',
-											activeId === item.id && 'text-white',
+											"relative z-10 transition-colors font-semibold text-zinc-600 cursor-pointer text-sm sm:text-base",
+											activeId === item.id && "text-white",
 										)}
 									>
 										{item.label}
@@ -115,7 +117,7 @@ export const TabSelector = ({
 
 			<div
 				className={cn(
-					'p-8 min-h-[200px] rounded-2xl border border-gray-50/5 bg-gray-50/2 flex items-center justify-center',
+					"p-8 min-h-[200px] rounded-2xl border border-gray-50/5 bg-gray-50/2 flex items-center justify-center",
 					contentClassName,
 				)}
 			>

@@ -1,25 +1,26 @@
-'use client';
+"use client";
 
-import { TabSelector } from '@/components/ui/tab-selector';
+import { TabSelector } from "@/components/ui/tab-selector";
 
-import { ActiveMember } from './active-member';
-import { AllMember } from './all-member';
+import { ActiveMember } from "./active-member";
+import { AllMember } from "./all-member";
 
 interface MembersFilterProps {
 	defaultTab?: string;
 }
 
-export const MembersFilter = ({ defaultTab = 'active-member' }: MembersFilterProps) => {
-
+export const MembersFilter = ({
+	defaultTab = "active-member",
+}: MembersFilterProps) => {
 	const tabItems = [
 		{
-			id: 'active-member',
-			label: 'Active',
+			id: "active-member",
+			label: "Active",
 			content: <ActiveMember />,
 		},
 		{
-			id: 'member-list',
-			label: 'All',
+			id: "member-list",
+			label: "All",
 			content: <AllMember />,
 		},
 	];

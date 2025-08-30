@@ -8,8 +8,8 @@ export const InfoBoxTitle = () => {
 				아이디어를 현실로!
 				<br />
 				전국 대학생 IT 연합
-				<strong className="font-bold text-green-500"> UMC</strong>에서
-				여러분을 기다립니다.
+				<strong className="font-bold text-green-500"> UMC</strong>에서 여러분을
+				기다립니다.
 			</h2>
 		</div>
 	);

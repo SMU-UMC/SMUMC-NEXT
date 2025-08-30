@@ -1,7 +1,7 @@
-import { Hero } from '@/components/sections/home/hero';
-import { InfoBox } from '@/components/sections/home/info-box';
-import { PartInfo } from '@/components/sections/home/part-info';
-import { ProjectCarousel } from '@/components/sections/home/project-carousel';
+import { Hero } from "@/components/sections/home/hero";
+import { InfoBox } from "@/components/sections/home/info-box";
+import { PartInfo } from "@/components/sections/home/part-info";
+import { ProjectCarousel } from "@/components/sections/home/project-carousel";
 
 const HomePage = () => {
 	return (

@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import { ProjectSlideCard } from '@/components/ui/project-slide-card';
-import { Project } from '@/types';
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { ProjectSlideCard } from "@/components/ui/project-slide-card";
+import type { Project } from "@/types";
 
 interface ProjectCarouselSliderProps {
 	projects: Project[];
-	direction: 'left' | 'right';
+	direction: "left" | "right";
 	keyPrefix: string;
 }
 
@@ -16,7 +16,7 @@ export const ProjectCarouselSlider = ({
 	direction,
 	keyPrefix,
 }: ProjectCarouselSliderProps) => {
-	const isRightDirection = direction === 'right';
+	const isRightDirection = direction === "right";
 
 	return (
 		<Swiper
@@ -32,13 +32,13 @@ export const ProjectCarouselSlider = ({
 			allowTouchMove={true}
 			grabCursor={true}
 			className={`!overflow-hidden w-full swiper-continuous-${direction}`}
-			dir={direction === 'left' ? 'ltr' : 'rtl'}
+			dir={direction === "left" ? "ltr" : "rtl"}
 		>
 			{[...projects, ...projects, ...projects].map((project, index) => (
 				<SwiperSlide
 					key={`${keyPrefix}-${index}`}
 					className="!w-[160px] md:!w-[240px] swiper-slide"
-					dir={isRightDirection ? 'ltr' : undefined}
+					dir={isRightDirection ? "ltr" : undefined}
 				>
 					<ProjectSlideCard project={project} />
 				</SwiperSlide>

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { ReactNode } from 'react';
-import { HiOutlineFire } from 'react-icons/hi2';
-import { MobileNavbar } from './mobile-navbar';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+import { HiOutlineFire } from "react-icons/hi2";
+import { cn } from "@/lib/utils";
+import { MobileNavbar } from "./mobile-navbar";
 
 export const Navbar = () => {
 	return (
@@ -13,7 +13,7 @@ export const Navbar = () => {
 			{/* Desktop Navigation */}
 			<header
 				className={cn(
-					'z-50 fixed top-0 hidden sm:flex items-center justify-between w-full p-10',
+					"z-50 fixed top-0 hidden sm:flex items-center justify-between w-full p-10",
 				)}
 			>
 				<nav className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
@@ -38,8 +38,8 @@ const NavLink = ({ href, children }: { href: string; children: ReactNode }) => {
 		<Link
 			href={href}
 			className={cn(
-				'px-6 py-3 rounded-full transition-all text-sm font-medium text-white hover:text-gray-300',
-				pathname === href && 'bg-green-600',
+				"px-6 py-3 rounded-full transition-all text-sm font-medium text-white hover:text-gray-300",
+				pathname === href && "bg-green-600",
 			)}
 		>
 			{children}

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Project } from '@/types';
-import Image from 'next/image';
+import Image from "next/image";
+import type { Project } from "@/types";
 
 interface ProjectSlideCardProps {
 	project: Project;
@@ -12,7 +12,7 @@ export const ProjectSlideCard = ({ project }: ProjectSlideCardProps) => {
 		<article className="w-[160px] md:w-[240px] h-[90px] md:h-[135px] rounded-xl relative overflow-hidden group cursor-pointer transition-transform duration-300 mx-2">
 			<Image
 				aria-label="데모데이 프로젝트 이미지"
-				src={project.img || '/images/default_project.webp'}
+				src={project.img || "/images/default_project.webp"}
 				alt={project.name}
 				fill
 				className="object-cover md:size-60 size-48"

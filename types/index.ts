@@ -1,20 +1,20 @@
 export const PARTS = [
-	'IOS',
-	'ANDROID',
-	'WEB',
-	'NODE',
-	'SPRING',
-	'DESIGN',
-	'PLAN',
+	"IOS",
+	"ANDROID",
+	"WEB",
+	"NODE",
+	"SPRING",
+	"DESIGN",
+	"PLAN",
 ] as const;
 export const POSITIONS = [
-	'회장',
-	'부회장',
-	'운영진',
-	'파트장',
-	'챌린저',
+	"회장",
+	"부회장",
+	"운영진",
+	"파트장",
+	"챌린저",
 ] as const;
-export const GENDERS = ['M', 'W'] as const;
+export const GENDERS = ["M", "W"] as const;
 
 export type Part = (typeof PARTS)[number];
 export type Position = (typeof POSITIONS)[number];

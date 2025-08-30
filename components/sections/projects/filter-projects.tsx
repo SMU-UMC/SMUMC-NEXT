@@ -1,39 +1,39 @@
-'use client';
+"use client";
 
-import { PROJECTS, PROJECTS_YEAR } from '@/constants/projects';
-import { TabSelector } from '@/components/ui/tab-selector';
-import { useRouter } from 'next/navigation';
-import { useMemo } from 'react';
-import { ProjectCard } from './project-card';
+import { useRouter } from "next/navigation";
+import { useMemo } from "react";
+import { TabSelector } from "@/components/ui/tab-selector";
+import { PROJECTS, PROJECTS_YEAR } from "@/constants/projects";
+import { ProjectCard } from "./project-card";
 
 interface FilterProjectsProps {
 	defaultTag?: string;
 }
 
-export const FilterProjects = ({ defaultTag = 'All' }: FilterProjectsProps) => {
+export const FilterProjects = ({ defaultTag = "All" }: FilterProjectsProps) => {
 	const router = useRouter();
 
 	const setFilter = (tag: string | number) => {
-		if (tag && tag !== 'All') {
-			router.push('?tag=' + tag);
+		if (tag && tag !== "All") {
+			router.push("?tag=" + tag);
 		} else {
-			router.push('/projects');
+			router.push("/projects");
 		}
 	};
 
 	const tabItems = useMemo(() => {
-		return PROJECTS_YEAR.map(year => ({
+		return PROJECTS_YEAR.map((year) => ({
 			id: year,
-			label: year !== 'All' ? `${year}기` : year,
+			label: year !== "All" ? `${year}기` : year,
 			content: (
-					<ul className="flex flex-wrap justify-center gap-8 w-full mt-8 lg:mt-16">
-						{(year === 'All'
-							? [...PROJECTS].sort((a, b) => b.year - a.year)
-							: PROJECTS.filter(p => p.year.toString() === year.toString())
-						).map(project => (
-							<ProjectCard project={project} key={project.id} />
-						))}
-					</ul>
+				<ul className="flex flex-wrap justify-center gap-8 w-full mt-8 lg:mt-16">
+					{(year === "All"
+						? [...PROJECTS].sort((a, b) => b.year - a.year)
+						: PROJECTS.filter((p) => p.year.toString() === year.toString())
+					).map((project) => (
+						<ProjectCard project={project} key={project.id} />
+					))}
+				</ul>
 			),
 		}));
 	}, []);
@@ -45,7 +45,7 @@ export const FilterProjects = ({ defaultTag = 'All' }: FilterProjectsProps) => {
 					PROJECTS
 					<span className="absolute bottom-2 left-0 right-0 h-[35%] bg-green-400/40 -z-10" />
 				</h1>
-				<p className="break-keep text-zinc-400 text-md md:text-lg font-semibold text-center">
+				<p className="break-keep text-zinc-400 text-md md:text-lg font-semibold text-center px-4">
 					SMUMC 멤버들이 참여한 다양한 프로젝트를 확인해 보세요!
 				</p>
 			</header>

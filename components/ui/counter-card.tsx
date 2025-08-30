@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import CountUp from 'react-countup';
-import React, { useRef } from 'react';
-import { useInView } from 'framer-motion';
+import { useInView } from "framer-motion";
+import React, { useRef } from "react";
+import CountUp from "react-countup";
 
 interface CountUpCardProps {
 	title: string;

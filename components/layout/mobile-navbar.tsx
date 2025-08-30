@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { HiOutlineFire } from 'react-icons/hi2';
-import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
-import { COPYRIGHT_TEXT } from './footer';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { HiOutlineFire } from "react-icons/hi2";
+import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
+import { cn } from "@/lib/utils";
+import { COPYRIGHT_TEXT } from "./footer";
 
 export const MobileNavbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +16,10 @@ export const MobileNavbar = () => {
 	const closeMenu = () => setIsOpen(false);
 
 	const menuItems = [
-		{ href: '/', label: 'Home' },
-		{ href: '/projects', label: 'Projects' },
-		{ href: '/members', label: 'Members' },
-		{ href: '/notice', label: 'FAQ' },
+		{ href: "/", label: "Home" },
+		{ href: "/projects", label: "Projects" },
+		{ href: "/members", label: "Members" },
+		{ href: "/notice", label: "FAQ" },
 	];
 
 	return (
@@ -40,10 +40,10 @@ export const MobileNavbar = () => {
 			{/* Overlay */}
 			<div
 				className={cn(
-					'fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] sm:hidden transition-opacity duration-300',
+					"fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] sm:hidden transition-opacity duration-300",
 					isOpen
-						? 'opacity-100 pointer-events-auto'
-						: 'opacity-0 pointer-events-none',
+						? "opacity-100 pointer-events-auto"
+						: "opacity-0 pointer-events-none",
 				)}
 				onClick={closeMenu}
 			/>
@@ -51,21 +51,21 @@ export const MobileNavbar = () => {
 			{/* Menu Panel */}
 			<nav
 				className={cn(
-					'fixed top-0 right-0 h-full w-[300px] bg-zinc-900/95 backdrop-blur-lg z-[58] sm:hidden',
-					'transform transition-transform duration-300 ease-out',
-					isOpen ? 'translate-x-0' : 'translate-x-full',
+					"fixed top-0 right-0 h-full w-[300px] bg-zinc-900/95 backdrop-blur-lg z-[58] sm:hidden",
+					"transform transition-transform duration-300 ease-out",
+					isOpen ? "translate-x-0" : "translate-x-full",
 				)}
 			>
 				<div className="flex flex-col h-full pt-24 px-8">
 					<div className="flex flex-col gap-2">
-						{menuItems.map(item => (
+						{menuItems.map((item) => (
 							<Link
 								key={item.href}
 								href={item.href}
 								onClick={closeMenu}
 								className={cn(
-									'flex items-center gap-3 px-4 py-3 rounded-lg text-white transition-all duration-300 hover:scale-95',
-									pathname === item.href && 'text-green-600',
+									"flex items-center gap-3 px-4 py-3 rounded-lg text-white transition-all duration-300 hover:scale-95",
+									pathname === item.href && "text-green-600",
 								)}
 							>
 								<span className="font-bold text-3xl">{item.label}</span>

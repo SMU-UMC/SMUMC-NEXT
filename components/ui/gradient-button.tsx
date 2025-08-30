@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
-import { cn } from '@/lib/utils';
+import { Slot } from "@radix-ui/react-slot";
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
 export interface GradientButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,7 +13,7 @@ export interface GradientButtonProps
 
 const GradientButton = React.forwardRef<HTMLButtonElement, GradientButtonProps>(
 	({ className, children, asChild = false, ...props }, ref) => {
-		const Comp = asChild ? Slot : 'button';
+		const Comp = asChild ? Slot : "button";
 
 		const gradientElement = (
 			<div
@@ -29,11 +29,11 @@ const GradientButton = React.forwardRef<HTMLButtonElement, GradientButtonProps>(
 				<Slot
 					ref={ref}
 					className={cn(
-						'relative px-6 py-3 rounded-xl whitespace-nowrap cursor-pointer flex items-center justify-center gap-2',
-						'bg-gradient-to-r from-gray-700 to-gray-600 text-white font-medium',
-						'transition-all duration-500',
-						'enabled:hover:from-gray-800 enabled:hover:to-gray-700',
-						'disabled:cursor-not-allowed disabled:opacity-50',
+						"relative px-6 py-3 rounded-xl whitespace-nowrap cursor-pointer flex items-center justify-center gap-2",
+						"bg-gradient-to-r from-gray-700 to-gray-600 text-white font-medium",
+						"transition-all duration-500",
+						"enabled:hover:from-gray-800 enabled:hover:to-gray-700",
+						"disabled:cursor-not-allowed disabled:opacity-50",
 						className,
 					)}
 					{...props}
@@ -55,11 +55,11 @@ const GradientButton = React.forwardRef<HTMLButtonElement, GradientButtonProps>(
 			<button
 				ref={ref}
 				className={cn(
-					'relative px-6 py-3 rounded-xl whitespace-nowrap cursor-pointer flex items-center justify-center gap-2',
-					'bg-gradient-to-r from-gray-700 to-gray-600 text-white font-medium',
-					'transition-all duration-500',
-					'enabled:hover:from-gray-800 enabled:hover:to-gray-700',
-					'disabled:cursor-not-allowed',
+					"relative px-6 py-3 rounded-xl whitespace-nowrap cursor-pointer flex items-center justify-center gap-2",
+					"bg-gradient-to-r from-gray-700 to-gray-600 text-white font-medium",
+					"transition-all duration-500",
+					"enabled:hover:from-gray-800 enabled:hover:to-gray-700",
+					"disabled:cursor-not-allowed",
 					className,
 				)}
 				{...props}
@@ -71,6 +71,6 @@ const GradientButton = React.forwardRef<HTMLButtonElement, GradientButtonProps>(
 	},
 );
 
-GradientButton.displayName = 'GradientButton';
+GradientButton.displayName = "GradientButton";
 
 export { GradientButton };

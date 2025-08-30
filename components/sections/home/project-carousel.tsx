@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { PROJECTS } from '@/constants/projects';
-import { motion } from 'framer-motion';
-import { ProjectCarouselHeader } from './project-carousel-header';
-import { ProjectCarouselBackground } from './project-carousel-background';
-import { ProjectCarouselSlider } from './project-carousel-slider';
-import 'swiper/css';
-import 'swiper/css/free-mode';
+import { motion } from "framer-motion";
+import { PROJECTS } from "@/constants/projects";
+import { ProjectCarouselBackground } from "./project-carousel-background";
+import { ProjectCarouselHeader } from "./project-carousel-header";
+import { ProjectCarouselSlider } from "./project-carousel-slider";
+import "swiper/css";
+import "swiper/css/free-mode";
 
 export const ProjectCarousel = () => {
 	// 프로젝트를 두 그룹으로 나누기
@@ -21,7 +21,7 @@ export const ProjectCarousel = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: false }}
 				transition={{
-					ease: 'easeInOut',
+					ease: "easeInOut",
 					duration: 2,
 					y: { duration: 1 },
 				}}
