@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 const NoticePage = () => {
 	return (
-		<main className="min-h-full flex flex-col justify-center items-center py-40 sm:py-44">
+		<div className="min-h-full flex flex-col justify-center items-center py-40 sm:py-44">
 			<QuestionAccordion />
-		</main>
+		</div>
 	);
 };
 

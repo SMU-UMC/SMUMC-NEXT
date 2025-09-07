@@ -50,6 +50,13 @@ export const TabSelector = ({
 		onTabChange?.(id);
 	};
 
+	const handleKeyDown = (event: React.KeyboardEvent, id: string | number) => {
+		if (event.key === "Enter" || event.key === " ") {
+			event.preventDefault();
+			handleTabClick(id);
+		}
+	};
+
 	const activeItem = items.find((item) => item.id === activeId);
 
 	return (
@@ -64,7 +71,7 @@ export const TabSelector = ({
 			)}
 
 			{/* Desktop/Regular Tab Bar */}
-			<nav
+			<div
 				className={cn(
 					"relative bg-gray-50/5 rounded-full p-1 mb-6 max-w-fit mx-auto",
 					useMobileTab && "hidden lg:block",
@@ -72,15 +79,22 @@ export const TabSelector = ({
 				)}
 			>
 				<LayoutGroup>
-					<ul className="flex gap-1">
+					<ul className="flex gap-1 list-none">
 						{items.map((item) => (
 							<li key={item.id}>
 								<motion.button
+									type="button"
 									onClick={() => handleTabClick(item.id)}
+									onKeyDown={(e) => handleKeyDown(e, item.id)}
 									className={cn(
-										"relative px-8 py-3 rounded-full font-medium transition-colors",
+										"relative px-8 py-3 rounded-full font-medium transition-colors cursor-pointer",
 										tabClassName,
 									)}
+									role="tab"
+									aria-selected={activeId === item.id}
+									aria-controls={`tabpanel-${item.id}`}
+									id={`tab-${item.id}`}
+									tabIndex={activeId === item.id ? 0 : -1}
 									whileHover={{ scale: 1.02 }}
 									whileTap={{ scale: 0.98 }}
 									transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -102,7 +116,7 @@ export const TabSelector = ({
 									)}
 									<span
 										className={cn(
-											"relative z-10 transition-colors font-semibold text-zinc-600 cursor-pointer text-sm sm:text-base",
+											"relative z-10 transition-colors font-semibold text-zinc-600 text-sm sm:text-base",
 											activeId === item.id && "text-white",
 										)}
 									>
@@ -113,13 +127,16 @@ export const TabSelector = ({
 						))}
 					</ul>
 				</LayoutGroup>
-			</nav>
+			</div>
 
 			<div
 				className={cn(
 					"p-8 min-h-[200px] rounded-2xl border border-gray-50/5 bg-gray-50/2 flex items-center justify-center",
 					contentClassName,
 				)}
+				role="tabpanel"
+				id={`tabpanel-${activeId}`}
+				aria-labelledby={`tab-${activeId}`}
 			>
 				{activeItem?.content}
 			</div>

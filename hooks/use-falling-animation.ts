@@ -19,7 +19,7 @@ export const useFallingAnimation = (count: number = 30) => {
 				id: i,
 				left: Math.random() * 100,
 				animationDuration: 3 + Math.random() * 4,
-				delay: Math.random() * 5,
+				delay: Math.random() * 2,
 				size: 20 + Math.random() * 30,
 			});
 		}

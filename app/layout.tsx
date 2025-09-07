@@ -37,9 +37,17 @@ export default function RootLayout({
 	return (
 		<html lang="ko" className="scroll-pt-[3.5rem]" suppressHydrationWarning>
 			<body className="antialiased" suppressHydrationWarning>
+				<a
+					href="#main-content"
+					className="sr-only focus:not-sr-only focus:absolute focus:top-6 focus:left-6 bg-black text-white px-2 py-1 z-50 rounded"
+				>
+					메인 콘텐츠로 건너뛰기
+				</a>
 				<div className="relative flex flex-col size-full min-h-dvh">
 					<Navbar />
-					<main className="flex-1">{children}</main>
+					<main id="main-content" tabIndex={-1} className="flex-1">
+						{children}
+					</main>
 					<Footer />
 				</div>
 			</body>

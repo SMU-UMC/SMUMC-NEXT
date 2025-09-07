@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { SNS_LINKS } from "@/constants/sns";

@@ -1,7 +1,10 @@
 export const InfoBoxTitle = () => {
 	return (
 		<div className="relative w-full">
-			<span className="absolute inset-0 flex items-center justify-center text-5xl md:text-8xl font-black text-center tracking-wide text-zinc-600/15 animate-float select-none pointer-events-none -mt-30">
+			<span
+				className="absolute inset-0 flex items-center justify-center text-5xl md:text-8xl font-black text-center tracking-wide text-zinc-600/15 animate-float select-none pointer-events-none -mt-30"
+				aria-hidden="true"
+			>
 				Break The Rules
 			</span>
 			<h2 className="relative text-center text-2xl md:text-3xl font-bold leading-normal break-keep z-10">

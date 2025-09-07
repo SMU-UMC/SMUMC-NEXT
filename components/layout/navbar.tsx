@@ -11,38 +11,54 @@ export const Navbar = () => {
 	return (
 		<>
 			{/* Desktop Navigation */}
-			<header
+			<nav
 				className={cn(
 					"z-50 fixed top-0 hidden sm:flex items-center justify-between w-full p-10",
 				)}
 			>
-				<nav className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2">
-					<NavLink href="/">
-						<HiOutlineFire size={20} />
+				<ul
+					className="absolute left-1/2 transform -translate-x-1/2 bg-gray-900/40 backdrop-blur-md rounded-full p-2 flex items-center gap-x-2"
+					aria-label="주 메뉴"
+				>
+					<NavLink href="/" aria-label="홈">
+						<HiOutlineFire size={20} aria-hidden="true" />
 					</NavLink>
 					<NavLink href="/projects">Projects</NavLink>
 					<NavLink href="/members">Members</NavLink>
 					<NavLink href="/notice">FAQ</NavLink>
-				</nav>
-			</header>
+				</ul>
+			</nav>
 			{/* Mobile Navigation */}
 			<MobileNavbar />
 		</>
 	);
 };
 
-const NavLink = ({ href, children }: { href: string; children: ReactNode }) => {
+const NavLink = ({
+	href,
+	children,
+	"aria-label": ariaLabel,
+}: {
+	href: string;
+	children: ReactNode;
+	"aria-label"?: string;
+}) => {
 	const pathname = usePathname();
+	const isActive = pathname === href;
 
 	return (
-		<Link
-			href={href}
-			className={cn(
-				"px-6 py-3 rounded-full transition-all text-sm font-medium text-white hover:text-gray-300",
-				pathname === href && "bg-green-600",
-			)}
-		>
-			{children}
-		</Link>
+		<li>
+			<Link
+				className={cn(
+					"block rounded-full transition-all text-sm font-medium text-white hover:text-gray-300 px-6 py-3",
+					isActive && "bg-green-600",
+				)}
+				href={href}
+				aria-label={ariaLabel}
+				aria-current={isActive ? "page" : undefined}
+			>
+				{children}
+			</Link>
+		</li>
 	);
 };

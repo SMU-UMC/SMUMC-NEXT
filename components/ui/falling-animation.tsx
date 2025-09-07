@@ -6,11 +6,13 @@ import { useFallingAnimation } from "@/hooks/use-falling-animation";
 interface FallingAnimationProps {
 	count?: number;
 	imageSrc: string;
+	description?: string;
 }
 
 export const FallingAnimation = ({
 	count = 30,
 	imageSrc,
+	description = "Decorative falling animation",
 }: FallingAnimationProps) => {
 	const { items, isLoaded } = useFallingAnimation(count);
 
@@ -18,6 +20,10 @@ export const FallingAnimation = ({
 
 	return (
 		<>
+			<div className="sr-only" aria-live="polite">
+				{description}
+			</div>
+
 			{items.map((item) => (
 				<div
 					key={item.id}
@@ -31,6 +37,8 @@ export const FallingAnimation = ({
 							animationDelay: `${item.delay}s`,
 						} as React.CSSProperties
 					}
+					role="presentation"
+					aria-hidden="true"
 				>
 					<Image
 						src={imageSrc}

@@ -28,7 +28,7 @@ export const AllMember = () => {
 
 	const setFilter = (selectedYear: string) => {
 		const parsedYear = parseInt(selectedYear, 10);
-		if (!isNaN(parsedYear)) {
+		if (!Number.isNaN(parsedYear)) {
 			router.replace(`/members?all=true&year=${parsedYear}`, { scroll: false });
 		} else {
 			router.replace("/members?all=true", { scroll: false });
@@ -69,11 +69,11 @@ export const AllMember = () => {
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
 				{CURRENT_MEMBERS.map((member) => (
 					<MemberCard key={member.id} member={member} />
 				))}
-			</div>
+			</ul>
 		</div>
 	);
 };

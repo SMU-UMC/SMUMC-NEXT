@@ -9,12 +9,12 @@ interface MemberCardProps {
 
 export const MemberCard = ({ member }: MemberCardProps) => {
 	return (
-		<article className="border border-zinc-200/80  bg-white/80 rounded-xl relative w-full h-56">
-			<div className="flex items-center justify-between p-6">
+		<li className="border border-zinc-200/80 bg-white/80 rounded-xl relative w-full h-56">
+			<article className="flex items-center justify-between p-6">
 				<div className="flex flex-col justify-center">
-					<span className="bg-zinc-100 text-zinc-600 text-xs font-medium px-2 py-1 rounded-md inline-block w-fit mb-2">
+					<p className="bg-zinc-100 text-zinc-600 text-xs font-medium px-2 py-1 rounded-md inline-block w-fit mb-2">
 						{member.position}
-					</span>
+					</p>
 
 					<div className="flex items-center gap-2">
 						<h3 className="font-bold text-zinc-900 text-xl sm:text-2xl">
@@ -49,7 +49,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 						className="object-contain p-4 h-[150px]"
 					/>
 				</div>
-			</div>
-		</article>
+			</article>
+		</li>
 	);
 };

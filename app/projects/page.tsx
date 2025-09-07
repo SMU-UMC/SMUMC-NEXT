@@ -20,9 +20,12 @@ const ProjectPage = async ({ searchParams }: ProjectPageProps) => {
 	const tag = params.tag || "All";
 
 	return (
-		<main className="min-h-full flex flex-col py-40">
+		<div className="min-h-full flex flex-col py-40">
+			<div className="mb-8">
+				<h1 className="sr-only">프로젝트</h1>
+			</div>
 			<FilterProjects defaultTag={tag} />
-		</main>
+		</div>
 	);
 };
 

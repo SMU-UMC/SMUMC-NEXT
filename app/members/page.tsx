@@ -22,9 +22,9 @@ const MembersPage = async ({ searchParams }: MembersPageProps) => {
 	const isAllTab = params.all === "true";
 
 	return (
-		<main className="min-h-full flex flex-col justify-center items-center bg-green-50 py-36 sm:py-44">
+		<div className="min-h-full flex flex-col justify-center items-center bg-green-50 py-36 sm:py-44">
 			<MembersFilter defaultTab={isAllTab ? "member-list" : "active-member"} />
-		</main>
+		</div>
 	);
 };
 

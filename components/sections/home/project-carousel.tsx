@@ -15,7 +15,10 @@ export const ProjectCarousel = () => {
 	const secondRow = PROJECTS.slice(halfIndex);
 
 	return (
-		<section className="flex flex-col items-center justify-center gap-4 w-full">
+		<section
+			className="flex flex-col items-center justify-center gap-4 w-full"
+			aria-labelledby="projects-section-title"
+		>
 			<motion.div
 				initial={{ opacity: 0, y: 100 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -33,13 +36,11 @@ export const ProjectCarousel = () => {
 					<ProjectCarouselBackground />
 					<div className="w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center gap-4 relative z-10">
 						<ProjectCarouselSlider
-							swiper-wrapper
 							projects={firstRow}
 							direction="left"
 							keyPrefix="first"
 						/>
 						<ProjectCarouselSlider
-							swiper-wrapper
 							projects={secondRow}
 							direction="right"
 							keyPrefix="second"

@@ -29,15 +29,26 @@ const RecruitmentButton = () => {
 
 	if (!IS_RECRUITING) {
 		return (
-			<GradientButton disabled>{CURRENT_GENERATION}기 모집 완료</GradientButton>
+			<GradientButton
+				disabled
+				aria-label={`${CURRENT_GENERATION}기 모집이 완료되었습니다`}
+			>
+				{CURRENT_GENERATION}기 모집 완료
+			</GradientButton>
 		);
 	}
 
 	if (IS_RECRUITING) {
 		return (
 			<GradientButton asChild>
-				<Link href={APPLICATION_FORM_URL} target="_blank">
-					{CURRENT_GENERATION}기 모집중 <FiArrowUpRight />
+				<Link
+					href={APPLICATION_FORM_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={`${CURRENT_GENERATION}기 모집 지원서 작성하기 (새 창에서 열림)`}
+				>
+					{CURRENT_GENERATION}기 모집중
+					<FiArrowUpRight aria-hidden="true" />
 				</Link>
 			</GradientButton>
 		);

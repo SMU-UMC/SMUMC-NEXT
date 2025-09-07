@@ -30,17 +30,67 @@ export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		VariantProps<typeof buttonVariants> {
 	asChild?: boolean;
+	loading?: boolean;
+	loadingText?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ className, variant, size, asChild = false, ...props }, ref) => {
-		const Comp = asChild ? Slot : "button";
+	(
+		{
+			className,
+			variant,
+			size,
+			asChild = false,
+			loading = false,
+			loadingText = "Loading...",
+			children,
+			disabled,
+			...props
+		},
+		ref,
+	) => {
+		const _Comp = asChild ? Slot : "button";
+		const isDisabled = disabled || loading;
+
+		if (asChild) {
+			return (
+				<Slot
+					className={cn(buttonVariants({ variant, size, className }))}
+					ref={ref}
+					aria-disabled={isDisabled}
+					aria-label={loading && loadingText ? loadingText : undefined}
+					{...props}
+				>
+					{loading ? (
+						<>
+							<span className="sr-only">{loadingText}</span>
+							{children}
+						</>
+					) : (
+						children
+					)}
+				</Slot>
+			);
+		}
+
 		return (
-			<Comp
+			<button
 				className={cn(buttonVariants({ variant, size, className }))}
 				ref={ref}
+				disabled={isDisabled}
+				aria-disabled={isDisabled}
+				aria-label={loading && loadingText ? loadingText : undefined}
 				{...props}
-			/>
+			>
+				{loading ? (
+					<>
+						<span className="sr-only">{loadingText}</span>
+						{children}
+					</>
+				) : (
+					children
+				)}
+			</button>
 		);
 	},
 );

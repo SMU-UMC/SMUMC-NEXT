@@ -18,7 +18,9 @@ export const SmoothAccordionItem = React.forwardRef<
 	AccordionItemProps
 >(({ title, children, isOpen = false, onToggle, className }, ref) => {
 	const [internalOpen, setInternalOpen] = React.useState(false);
-	const actuallyOpen = isOpen !== undefined ? isOpen : internalOpen;
+	const actuallyOpen = onToggle ? isOpen || false : internalOpen;
+	const contentId = React.useId();
+	const headerId = React.useId();
 
 	const handleToggle = () => {
 		if (onToggle) {
@@ -28,16 +30,28 @@ export const SmoothAccordionItem = React.forwardRef<
 		}
 	};
 
+	const handleKeyDown = (event: React.KeyboardEvent) => {
+		if (event.key === "Enter" || event.key === " ") {
+			event.preventDefault();
+			handleToggle();
+		}
+	};
+
 	return (
 		<li ref={ref} className={cn("border-b", className)}>
 			<button
+				type="button"
+				id={headerId}
 				onClick={handleToggle}
-				className="flex w-full items-center justify-between py-4 font-medium group text-left hover:cursor-pointer"
+				onKeyDown={handleKeyDown}
+				aria-expanded={actuallyOpen}
+				aria-controls={contentId}
+				className="flex w-full items-center justify-between py-4 px-0 font-medium group text-left cursor-pointer"
 			>
 				<span className="text-md sm:text-xl font-bold text-zinc-700 hover:text-zinc-500 transition-all">
 					{title}
 				</span>
-				<div className="relative size-12 shrink-0">
+				<div className="relative size-12 shrink-0" aria-hidden="true">
 					<motion.span
 						animate={{
 							rotate: actuallyOpen ? 90 : 0,
@@ -64,6 +78,8 @@ export const SmoothAccordionItem = React.forwardRef<
 			<AnimatePresence initial={false}>
 				{actuallyOpen && (
 					<motion.div
+						id={contentId}
+						aria-labelledby={headerId}
 						initial={{ height: 0, opacity: 0 }}
 						animate={{
 							height: "auto",
@@ -97,12 +113,15 @@ interface SmoothAccordionProps {
 	children: React.ReactNode;
 	type?: "single" | "multiple";
 	className?: string;
+	/** Accessible label for the accordion */
+	"aria-label"?: string;
 }
 
 export const SmoothAccordion: React.FC<SmoothAccordionProps> = ({
 	children,
 	type = "single",
 	className,
+	"aria-label": ariaLabel,
 }) => {
 	const [openItems, setOpenItems] = React.useState<number[]>([]);
 
@@ -119,13 +138,20 @@ export const SmoothAccordion: React.FC<SmoothAccordionProps> = ({
 	};
 
 	return (
-		<ul className={cn("w-full text-zinc-600", className)}>
+		<ul
+			className={cn("w-full text-zinc-600", className)}
+			aria-label={ariaLabel || "Accordion menu"}
+			role="presentation"
+		>
 			{React.Children.map(children, (child, index) => {
-				if (React.isValidElement(child)) {
-					return React.cloneElement(child, {
-						isOpen: openItems.includes(index),
-						onToggle: () => handleToggle(index),
-					} as any);
+				if (React.isValidElement(child) && child.type === SmoothAccordionItem) {
+					return React.cloneElement(
+						child as React.ReactElement<AccordionItemProps>,
+						{
+							isOpen: openItems.includes(index),
+							onToggle: () => handleToggle(index),
+						},
+					);
 				}
 				return child;
 			})}
