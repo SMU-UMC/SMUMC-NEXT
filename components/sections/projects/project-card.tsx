@@ -1,7 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 import type { Project } from "@/types";
 
@@ -10,8 +9,6 @@ export interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-	const router = useRouter();
-
 	return (
 		<li className="flex flex-col gap-1 size-full max-w-xs">
 			<Image
@@ -35,7 +32,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 								href={project.github}
 								target="_blank"
 								className="cursor-pointer"
-								aria-label={`${project.name} GitHub 저장소`}
+								aria-label={`${project.name} GitHub`}
 							>
 								<FaGithub
 									size={16}
@@ -48,7 +45,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 								href={project.release}
 								target="_blank"
 								className="cursor-pointer"
-								aria-label={`${project.name} 라이브 사이트`}
+								aria-label={`${project.name} 배포 사이트`}
 							>
 								<ArrowUpRight
 									size={16}
@@ -59,7 +56,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 					</div>
 				</div>
 
-				<p className="font-semibold w-full text-sm truncate flex flex-start">
+				<p className="font-semibold w-full text-sm truncate">
 					{project.description}
 				</p>
 

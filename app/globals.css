@@ -30,12 +30,25 @@
 		}
 	}
 
+	@keyframes fall {
+		from {
+			transform: translateY(-100vh) rotate(0deg);
+		}
+		to {
+			transform: translateY(100vh) rotate(360deg);
+		}
+	}
+
 	.animate-scroll-left {
 		animation: scroll-left 30s linear infinite;
 	}
 
 	.animate-scroll-right {
 		animation: scroll-right 30s linear infinite;
+	}
+
+	.animate-fall {
+		animation: fall linear infinite;
 	}
 
 	.swiper-continuous-left .swiper-wrapper {

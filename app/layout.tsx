@@ -3,7 +3,6 @@ import "./globals.css";
 import type React from "react";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
-import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://www.smumc.co.kr/"),
