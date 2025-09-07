@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import { MembersFilter } from "@/components/sections/members/members-filter";
+
+export const metadata: Metadata = {
+	title: "멤버 | SMUMC",
+	description:
+		"SMUMC의 멤버들을 만나보세요. 활동 중인 멤버와 전체 멤버를 확인할 수 있습니다.",
+	openGraph: {
+		title: "멤버 | SMUMC",
+		description:
+			"SMUMC의 멤버들을 만나보세요. 활동 중인 멤버와 전체 멤버를 확인할 수 있습니다.",
+		type: "website",
+	},
+};
 
 interface MembersPageProps {
 	searchParams: Promise<{ all?: string }>;
